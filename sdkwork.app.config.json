@@ -8,13 +8,19 @@
     "description": "SDKWork mahjong platform for matches, rooms, and leaderboards",
     "owner": "sdkwork-mahjong",
     "domain": "game",
-    "capability": "match"
+    "capability": "match",
+    "key": "sdkwork-mahjong",
+    "appType": "APP_HTML",
+    "officialWebsiteUrl": "https://sdkwork.com/apps/sdkwork-mahjong"
   },
   "runtime": {
     "apiBaseUrl": "http://localhost:8097",
     "appApiPrefix": "/app/v3/api",
     "backendApiPrefix": "/backend/v3/api",
-    "supportedDeploymentProfiles": ["standalone", "cloud"],
+    "supportedDeploymentProfiles": [
+      "standalone",
+      "cloud"
+    ],
     "defaultDeploymentProfile": "standalone"
   },
   "sdk": {
@@ -30,5 +36,15 @@
     "match": true,
     "rooms": true,
     "leaderboards": true
-  }
+  },
+  "backend": {
+    "profileKey": "backend-root-admin",
+    "accessTokenPermissionScope": [
+      "iam.users.read",
+      "iam.organizations.read",
+      "iam.roles.read",
+      "iam.permissions.read"
+    ]
+  },
+  "environments": {}
 }
