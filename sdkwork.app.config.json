@@ -44,7 +44,9 @@
       "iam.organizations.read",
       "iam.roles.read",
       "iam.permissions.read"
-    ]
+    ],
+    "tenantId": "100001",
+    "organizationId": "0"
   },
   "environments": {}
 }

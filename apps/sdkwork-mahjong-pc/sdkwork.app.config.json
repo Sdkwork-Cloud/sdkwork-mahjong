@@ -23,16 +23,24 @@
     "grantMode": "current",
     "platform": "WEB",
     "appId": null,
-    "organizationId": null
+    "organizationId": "0",
+    "tenantId": "100001"
   },
   "runtime": {
     "family": "pc",
     "framework": "react",
-    "runtimes": ["BROWSER"],
-    "deliveryModes": ["DIRECT_DOWNLOAD"],
+    "runtimes": [
+      "BROWSER"
+    ],
+    "deliveryModes": [
+      "DIRECT_DOWNLOAD"
+    ],
     "defaultPlatform": "WEB",
     "defaultArchitecture": "x64",
-    "supportedDeploymentProfiles": ["standalone", "cloud"],
+    "supportedDeploymentProfiles": [
+      "standalone",
+      "cloud"
+    ],
     "defaultDeploymentProfile": "standalone",
     "apiBaseUrl": "http://localhost:8097",
     "appApiPrefix": "/app/v3/api",
@@ -57,16 +65,26 @@
     },
     "screenshots": [],
     "previews": [],
-    "metadata": { "assetVersion": "0.1.0", "defaultLocale": "en-US" }
+    "metadata": {
+      "assetVersion": "0.1.0",
+      "defaultLocale": "en-US"
+    }
   },
   "publish": {
     "status": "ACTIVE",
-    "platforms": ["WEB"],
-    "installPlatforms": ["WEB"],
+    "platforms": [
+      "WEB"
+    ],
+    "installPlatforms": [
+      "WEB"
+    ],
     "defaultPackageId": "web-browser-standalone-zip",
     "storeUrl": "https://sdkwork.com/apps/sdkwork-mahjong-pc",
     "stores": [],
-    "config": { "workspaceRoot": ".", "framework": "react" }
+    "config": {
+      "workspaceRoot": ".",
+      "framework": "react"
+    }
   },
   "environments": {
     "development": {
@@ -96,13 +114,18 @@
           "enabled": true
         }
       ],
-      "metadata": { "workspaceRoot": ".", "packageManager": "pnpm" }
+      "metadata": {
+        "workspaceRoot": ".",
+        "packageManager": "pnpm"
+      }
     }
   },
   "release": {
     "currentVersion": "0.1.0",
     "defaultChannel": "STABLE",
-    "latest": { "STABLE": "0.1.0" },
+    "latest": {
+      "STABLE": "0.1.0"
+    },
     "notes": []
   },
   "security": {
@@ -111,7 +134,11 @@
     "sbomRequired": false
   },
   "devApp": {
-    "build": { "targets": ["browser"] },
+    "build": {
+      "targets": [
+        "browser"
+      ]
+    },
     "sourceRoot": "."
   },
   "sdk": {
