@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.database.table-registry",
+  "tables": [
+    {
+      "table_name": "mj_match",
+      "owner": "sdkwork-mahjong",
+      "compliance_level": "L2",
+      "lifecycle_status": "active"
+    },
+    {
+      "table_name": "mj_room",
+      "owner": "sdkwork-mahjong",
+      "compliance_level": "L2",
+      "lifecycle_status": "active"
+    },
+    {
+      "table_name": "mj_leaderboard",
+      "owner": "sdkwork-mahjong",
+      "compliance_level": "L2",
+      "lifecycle_status": "active"
+    }
+  ]
+}

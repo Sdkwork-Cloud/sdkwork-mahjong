@@ -1,0 +1,1 @@
+-- Games bootstrap seed (non-destructive placeholder)

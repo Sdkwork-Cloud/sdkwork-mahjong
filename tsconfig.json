@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "ignoreDeprecations": "6.0",
+    "baseUrl": ".",
+    "paths": {
+      "@sdkwork/utils": ["../sdkwork-utils/packages/sdkwork-utils-typescript/src/index.ts"],
+      "@sdkwork/mahjong-contracts": ["packages/common/mahjong/sdkwork-mahjong-contracts/src/index.ts"]
+    }
+  },
+  "include": ["scripts/**/*.mjs", "tools/**/*.mjs", "packages/**/*.ts", "sdks/test/**/*.mjs"]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "sdkwork-mahjong-pc-ringmatch",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
+    "react-i18next": "^16.5.6",
+    "sdkwork-mahjong-pc-core": "workspace:*",
+    "sdkwork-mahjong-pc-commons": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "typescript": "~5.8.2"
+  }
+}

@@ -1,0 +1,5 @@
+# Games database config example (copy to host-local override, do not commit secrets)
+
+[database]
+url = "postgres://sdkwork:sdkwork@127.0.0.1:5432/sdkwork_mahjong"
+max_connections = 10

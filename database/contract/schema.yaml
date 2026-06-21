@@ -1,0 +1,19 @@
+schema_version: 1
+kind: sdkwork.database.schema
+module_id: mahjong
+contract_version: 1.0.0
+owner_team: sdkwork-mahjong
+compliance_level: L2
+engines:
+  - postgres
+table_prefix: mj_
+tables:
+  - name: mj_match
+    lifecycle_status: active
+    owner: sdkwork-mahjong
+  - name: mj_room
+    lifecycle_status: active
+    owner: sdkwork-mahjong
+  - name: mj_leaderboard
+    lifecycle_status: active
+    owner: sdkwork-mahjong

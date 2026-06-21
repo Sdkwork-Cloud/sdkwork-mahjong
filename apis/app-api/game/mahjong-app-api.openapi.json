@@ -1,0 +1,139 @@
+{
+  "openapi": "3.1.2",
+  "info": {
+    "title": "SDKWork Mahjong App API",
+    "version": "0.1.0",
+    "x-sdkwork-owner": "sdkwork-mahjong",
+    "x-sdkwork-domain": "game"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "operationId": "mahjong.health.check",
+        "tags": [
+          "health"
+        ],
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app-api",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/ready": {
+      "get": {
+        "operationId": "mahjong.ready.check",
+        "tags": [
+          "health"
+        ],
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app-api",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/app/v3/api/mahjong/matches": {
+      "get": {
+        "operationId": "mahjong.match.list",
+        "tags": [
+          "mahjong"
+        ],
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app-api",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/app/v3/api/mahjong/matches/{matchId}": {
+      "get": {
+        "operationId": "mahjong.match.retrieve",
+        "tags": [
+          "mahjong"
+        ],
+        "x-sdkwork-request-context": "WebRequestContext",
+        "x-sdkwork-api-surface": "app-api",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MahjongApiResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code",
+          "message",
+          "data"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "data": {}
+        }
+      },
+      "MahjongHealthResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "status",
+          "service"
+        ],
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "service": {
+            "type": "string"
+          }
+        }
+      },
+      "MahjongMatchItem": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "matchCode",
+          "title",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "matchCode": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

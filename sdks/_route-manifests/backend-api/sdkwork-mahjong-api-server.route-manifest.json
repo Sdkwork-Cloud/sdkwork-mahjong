@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.route.manifest",
+  "packageName": "sdkwork-mahjong-api-server",
+  "surface": "backend-api",
+  "owner": "sdkwork-mahjong",
+  "domain": "game",
+  "capability": "match",
+  "apiAuthority": "sdkwork-mahjong-backend-api",
+  "sdkFamily": "sdkwork-mahjong-backend-sdk",
+  "prefix": "/backend/v3/api",
+  "source": {
+    "crateRoot": "crates/sdkwork-mahjong-api-server",
+    "crateImport": "sdkwork_mahjong_api_server",
+    "openapiAuthority": "apis/backend-api/game/mahjong-backend-api.openapi.json"
+  },
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/backend/v3/api/mahjong/matches",
+      "operationId": "backend.mahjong.match.list",
+      "tags": ["mahjong"],
+      "requestContext": "WebRequestContext",
+      "apiSurface": "backend-api",
+      "auth": { "mode": "dual-token", "required": true, "tenantScope": "tenant", "dataScope": "organization" },
+      "handler": { "module": "crate", "name": "backend_mahjong_match_list" },
+      "schemas": { "request": null, "response": "MahjongApiResult", "problem": "ProblemDetail" },
+      "ownership": { "owner": "sdkwork-mahjong", "apiAuthority": "sdkwork-mahjong-backend-api" },
+      "source": { "file": "apis/backend-api/game/mahjong-backend-api.openapi.json" }
+    }
+  ]
+}

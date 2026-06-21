@@ -1,0 +1,7 @@
+schemaVersion: 1
+kind: sdkwork.database.drift-policy
+moduleId: games
+rules:
+  - id: table-registry-match
+    severity: error
+    description: Live database tables must match contract table registry.

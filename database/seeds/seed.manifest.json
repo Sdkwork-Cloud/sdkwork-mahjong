@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.database.seed",
+  "defaultLocale": "zh-CN",
+  "profiles": [
+    {
+      "profile": "standard",
+      "locales": ["zh-CN"],
+      "files": ["common/001_bootstrap.sql"]
+    }
+  ]
+}

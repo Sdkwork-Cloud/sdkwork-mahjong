@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 3,
+  "kind": "sdkwork.app",
+  "app": {
+    "key": "sdkwork-mahjong-pc",
+    "name": "SDKWork Mahjong PC",
+    "displayName": "SDKWork Mahjong",
+    "description": "PC browser application for SDKWork games catalog, rooms, and leaderboards.",
+    "vendor": "SDKWork",
+    "officialWebsiteUrl": "https://sdkwork.com/apps/sdkwork-mahjong-pc",
+    "appType": "APP_WEB",
+    "versionSource": "package.json",
+    "identifiers": {
+      "packageName": null,
+      "bundleId": null,
+      "desktopAppId": null,
+      "containerImage": null
+    }
+  },
+  "backend": {
+    "profileKey": "backend-root-admin",
+    "ownerMode": "tenant",
+    "grantMode": "current",
+    "platform": "WEB",
+    "appId": null,
+    "organizationId": null
+  },
+  "runtime": {
+    "family": "pc",
+    "framework": "react",
+    "runtimes": ["BROWSER"],
+    "deliveryModes": ["DIRECT_DOWNLOAD"],
+    "defaultPlatform": "WEB",
+    "defaultArchitecture": "x64",
+    "supportedDeploymentProfiles": ["standalone", "cloud"],
+    "defaultDeploymentProfile": "standalone",
+    "apiBaseUrl": "http://localhost:8097",
+    "appApiPrefix": "/app/v3/api",
+    "backendApiPrefix": "/backend/v3/api"
+  },
+  "media": {
+    "icons": {
+      "primary": {
+        "id": "sdkwork-mahjong-pc-primary-icon",
+        "type": "ICON",
+        "purpose": "PRIMARY",
+        "url": "https://cdn.sdkwork.com/apps/sdkwork-mahjong/assets/icon-1024.png",
+        "platform": "WEB",
+        "locale": "en-US",
+        "width": 1024,
+        "height": 1024,
+        "format": "PNG",
+        "enabled": true
+      },
+      "platform": [],
+      "metadata": {}
+    },
+    "screenshots": [],
+    "previews": [],
+    "metadata": { "assetVersion": "0.1.0", "defaultLocale": "en-US" }
+  },
+  "publish": {
+    "status": "ACTIVE",
+    "platforms": ["WEB"],
+    "installPlatforms": ["WEB"],
+    "defaultPackageId": "web-browser-standalone-zip",
+    "storeUrl": "https://sdkwork.com/apps/sdkwork-mahjong-pc",
+    "stores": [],
+    "config": { "workspaceRoot": ".", "framework": "react" }
+  },
+  "environments": {
+    "development": {
+      "accessUrl": "http://localhost:3000",
+      "deployUrl": "http://localhost:3000",
+      "deployEnv": "dev"
+    },
+    "production": {
+      "accessUrl": "https://games.sdkwork.com",
+      "deployUrl": "https://games.sdkwork.com",
+      "deployEnv": "production"
+    }
+  },
+  "artifacts": {
+    "installConfig": {
+      "defaultPackageId": "web-browser-standalone-zip",
+      "packages": [
+        {
+          "id": "web-browser-standalone-zip",
+          "name": "SDKWork Mahjong PC Web",
+          "sourceType": "BINARY_URL",
+          "packageFormat": "ZIP",
+          "platform": "WEB",
+          "architecture": "x64",
+          "deploymentProfile": "standalone",
+          "runtimeTarget": "browser",
+          "enabled": true
+        }
+      ],
+      "metadata": { "workspaceRoot": ".", "packageManager": "pnpm" }
+    }
+  },
+  "release": {
+    "currentVersion": "0.1.0",
+    "defaultChannel": "STABLE",
+    "latest": { "STABLE": "0.1.0" },
+    "notes": []
+  },
+  "security": {
+    "checksumRequired": false,
+    "signatureRequired": false,
+    "sbomRequired": false
+  },
+  "devApp": {
+    "build": { "targets": ["browser"] },
+    "sourceRoot": "."
+  },
+  "sdk": {
+    "appApiAuthority": "sdkwork-mahjong-app-api",
+    "backendApiAuthority": "sdkwork-mahjong-backend-api",
+    "appSdkFamily": "sdkwork-mahjong-app-sdk",
+    "backendSdkFamily": "sdkwork-mahjong-backend-sdk"
+  },
+  "specs": {
+    "root": "../../../sdkwork-specs",
+    "architecture": "APP_PC_ARCHITECTURE_SPEC.md",
+    "ui": "APP_PC_REACT_UI_SPEC.md"
+  },
+  "metadata": {
+    "domain": "game",
+    "capability": "match",
+    "owner": "sdkwork-mahjong",
+    "applicationRoot": "../.."
+  }
+}

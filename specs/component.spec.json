@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.component.spec",
+  "component": {
+    "name": "sdkwork-mahjong-workspace",
+    "displayName": "SDKWork Mahjong Workspace",
+    "version": "0.1.0",
+    "type": "application-workspace",
+    "root": "sdkwork-mahjong",
+    "domain": "game",
+    "capability": "workspace",
+    "languages": ["typescript", "rust"],
+    "generated": false,
+    "manifests": ["package.json", "Cargo.toml", "sdkwork.app.config.json"]
+  },
+  "canonicalSpecs": [
+    {
+      "file": "COMPONENT_SPEC.md",
+      "path": "../sdkwork-specs/COMPONENT_SPEC.md",
+      "purpose": "Component-local contract and discovery rules."
+    },
+    {
+      "file": "WEB_FRAMEWORK_SPEC.md",
+      "path": "../sdkwork-specs/WEB_FRAMEWORK_SPEC.md",
+      "purpose": "Mandatory sdkwork-web-framework integration."
+    },
+    {
+      "file": "DATABASE_FRAMEWORK_SPEC.md",
+      "path": "../sdkwork-specs/DATABASE_FRAMEWORK_SPEC.md",
+      "purpose": "Database lifecycle and SPI orchestration."
+    },
+    {
+      "file": "API_SPEC.md",
+      "path": "../sdkwork-specs/API_SPEC.md",
+      "purpose": "HTTP API contracts and OpenAPI rules."
+    },
+    {
+      "file": "SECURITY_SPEC.md",
+      "path": "../sdkwork-specs/SECURITY_SPEC.md",
+      "purpose": "Authn/authz and protected API behavior."
+    },
+    {
+      "file": "DEPLOYMENT_SPEC.md",
+      "path": "../sdkwork-specs/DEPLOYMENT_SPEC.md",
+      "purpose": "Deployment profile parity and runtime targets."
+    },
+    {
+      "file": "TEST_SPEC.md",
+      "path": "../sdkwork-specs/TEST_SPEC.md",
+      "purpose": "Verification expectations."
+    }
+  ],
+  "contracts": {
+    "publicExports": ["."],
+    "runtimeEntrypoints": [
+      "package.json#scripts.dev",
+      "package.json#scripts.verify"
+    ],
+    "routeManifest": "sdks/_route-manifests/app-api/sdkwork-mahjong-api-server.route-manifest.json",
+    "sdkClients": ["sdkwork-mahjong-app-sdk", "sdkwork-mahjong-backend-sdk"],
+    "events": [],
+    "configKeys": [
+      "MAHJONG_DATABASE_URL",
+      "MAHJONG_API_BIND",
+      "SDKWORK_MAHJONG_APP_ROOT"
+    ]
+  },
+  "verification": {
+    "commands": ["pnpm verify"]
+  },
+  "exceptions": [
+    {
+      "id": "rpc-discovery-deferred",
+      "reason": "No RPC services yet; sdkwork-discovery will be integrated when split-service gRPC is introduced.",
+      "expiresAt": null
+    }
+  ]
+}
