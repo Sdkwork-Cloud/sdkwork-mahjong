@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.dependency.composition",
+  "applicationCode": "mahjong",
+  "clientArchitecture": "pc",
+  "surfaces": [
+    {
+      "surface": "app",
+      "corePackage": "sdkwork-mahjong-pc-core",
+      "sdkClients": [],
+      "reusableModules": [],
+      "hostAdapters": [],
+      "dependencyApiExports": [],
+      "dependencyApiSurfaces": []
+    }
+  ],
+  "buildToolEntries": {
+    "pnpm": {
+      "workspacePackages": [
+        "sdkwork-mahjong-pc-core",
+        "sdkwork-mahjong-pc-arena",
+        "sdkwork-mahjong-pc-auth",
+        "sdkwork-mahjong-pc-claws",
+        "sdkwork-mahjong-pc-commons",
+        "sdkwork-mahjong-pc-compute",
+        "sdkwork-mahjong-pc-dashboard",
+        "sdkwork-mahjong-pc-i18n",
+        "sdkwork-mahjong-pc-mall",
+        "sdkwork-mahjong-pc-quiz",
+        "sdkwork-mahjong-pc-recharge",
+        "sdkwork-mahjong-pc-ringmatch",
+        "sdkwork-mahjong-pc-user",
+        "sdkwork-mahjong-pc-vip",
+        "sdkwork-mahjong-pc-wallet"
+      ]
+    }
+  }
+}
