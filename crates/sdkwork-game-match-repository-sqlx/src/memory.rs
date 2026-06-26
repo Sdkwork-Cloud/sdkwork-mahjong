@@ -70,7 +70,7 @@ mod tests {
         }]);
 
         let page = repo
-            .list_matches("tenant-1", &GameMatchQuery::default())
+            .list_matches("100001", &GameMatchQuery::default())
             .await
             .expect("page");
 
