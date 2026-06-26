@@ -1,16 +1,16 @@
 use axum::Router;
-use sdkwork_iam_web_adapter::{build_web_framework_layer, IamDatabaseWebRequestContextResolver};
+use sdkwork_iam_web_adapter::{build_web_framework_layer, IamWebRequestContextResolver};
 use sdkwork_web_axum::with_web_request_context;
 use sdkwork_web_core::HttpRouteManifest;
 
 include!(concat!(env!("OUT_DIR"), "/mahjong_http_routes.rs"));
 
 pub fn mahjong_public_path_prefixes() -> Vec<String> {
-    vec!["/health".to_owned(), "/ready".to_owned()]
+    sdkwork_web_bootstrap::infra_public_path_prefixes()
 }
 
-fn default_resolver() -> IamDatabaseWebRequestContextResolver {
-    IamDatabaseWebRequestContextResolver::new(None)
+fn default_resolver() -> IamWebRequestContextResolver {
+    IamWebRequestContextResolver::new(None)
 }
 
 fn wrap_router_with_manifest(router: Router, route_manifest: HttpRouteManifest) -> Router {

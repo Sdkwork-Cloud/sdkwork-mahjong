@@ -1,5 +1,6 @@
 use sdkwork_mahjong_api_server::{build_match_store_async, build_router};
 use sdkwork_utils_rust::optional::default_if_blank;
+use sdkwork_web_bootstrap::{service_router, ServiceRouterConfig};
 
 #[tokio::main]
 async fn main() {
@@ -19,7 +20,8 @@ async fn main() {
     );
 
     let store = build_match_store_async().await;
-    let app = build_router(store);
+    let business = build_router(store);
+    let app = service_router(business, ServiceRouterConfig::default().with_always_ready());
     let listener = tokio::net::TcpListener::bind(&bind_address)
         .await
         .expect("bind mahjong api-server listener failed");

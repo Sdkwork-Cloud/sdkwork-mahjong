@@ -1,5 +1,4 @@
 pub mod bootstrap;
-pub mod health_router;
 pub mod match_router;
 mod web_bootstrap;
 
@@ -8,7 +7,6 @@ pub mod route_manifest {
 }
 
 pub use bootstrap::{build_match_store, build_match_store_async, build_router};
-pub use health_router::mahjong_health_router;
 pub use match_router::{
     app_mahjong_match_router_with_store, backend_mahjong_match_router_with_store,
     default_match_store, MahjongMatchStore,
