@@ -12,3 +12,7 @@ coverage/
 *.zip
 all_keys.txt
 keys.txt
+
+# SDKWork local runtime state
+.runtime/
+**/.runtime/

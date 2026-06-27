@@ -2,7 +2,7 @@ use axum::body::Body;
 use axum::http::{Request, StatusCode};
 use tower::ServiceExt;
 
-use sdkwork_mahjong_api_server::{
+use sdkwork_mahjong_standalone_gateway::{
     app_mahjong_match_router_with_store, default_match_store, with_mahjong_app_request_context,
 };
 

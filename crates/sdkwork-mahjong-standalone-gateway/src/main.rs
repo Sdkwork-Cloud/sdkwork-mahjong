@@ -1,4 +1,4 @@
-use sdkwork_mahjong_api_server::{build_match_store_async, build_router};
+use sdkwork_mahjong_standalone_gateway::{build_match_store_async, build_router};
 use sdkwork_utils_rust::optional::default_if_blank;
 use sdkwork_web_bootstrap::{service_router, ServiceRouterConfig};
 
@@ -24,9 +24,9 @@ async fn main() {
     let app = service_router(business, ServiceRouterConfig::default().with_always_ready());
     let listener = tokio::net::TcpListener::bind(&bind_address)
         .await
-        .expect("bind mahjong api-server listener failed");
-    tracing::info!("sdkwork-mahjong-api-server listening on {bind_address}");
+        .expect("bind mahjong standalone-gateway listener failed");
+    tracing::info!("sdkwork-mahjong-standalone-gateway listening on {bind_address}");
     axum::serve(listener, app)
         .await
-        .expect("serve mahjong api-server failed");
+        .expect("serve mahjong standalone-gateway failed");
 }

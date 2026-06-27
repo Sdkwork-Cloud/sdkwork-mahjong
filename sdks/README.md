@@ -2,6 +2,6 @@
 
 - `sdkwork-mahjong-app-sdk`: app-api generated client family
 - `sdkwork-mahjong-backend-sdk`: backend-api generated client family
-- `_route-manifests/`: HTTP route manifests consumed by `sdkwork-mahjong-api-server`
+- `_route-manifests/`: HTTP route manifests consumed by `sdkwork-mahjong-standalone-gateway`
 
 Run `pnpm sdk:generate` after changing route manifests or OpenAPI authorities.
