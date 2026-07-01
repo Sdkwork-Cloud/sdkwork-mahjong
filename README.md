@@ -1,4 +1,5 @@
 # SDKWork Mahjong
+repository-kind: application
 
 SDKWork mahjong (麻将) application root. Provides match, room, and leaderboard capabilities aligned with `../sdkwork-specs`.
 

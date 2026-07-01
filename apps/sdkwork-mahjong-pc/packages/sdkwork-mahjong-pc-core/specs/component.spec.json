@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.component.spec",
+  "component": {
+    "name": "sdkwork-mahjong-pc-core",
+    "type": "typescript-package",
+    "root": "apps/sdkwork-mahjong-pc/packages/sdkwork-mahjong-pc-core",
+    "domain": "mahjong",
+    "capability": "core",
+    "surface": "app",
+    "languages": [
+      "typescript"
+    ],
+    "generated": false
+  },
+  "contracts": {
+    "sdkDependencies": [
+      {
+        "workspace": "sdkwork-mahjong-app-sdk",
+        "surface": "app-api",
+        "credentialMode": "authenticated-app-api"
+      }
+    ],
+    "dependencyApiExports": [],
+    "dependencyApiSurfaces": []
+  }
+}

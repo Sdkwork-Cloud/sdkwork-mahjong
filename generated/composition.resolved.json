@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.composition.resolved",
+  "repository": "sdkwork-mahjong",
+  "integrations": [
+    {
+      "workspace": "sdkwork-mahjong-app-sdk",
+      "surface": "app-api",
+      "apiPrefix": "/app/v3/api",
+      "connectivityPlane": "application",
+      "runtimeMode": "same-origin-embedded",
+      "mountStatus": null,
+      "envKey": "VITE_SDKWORK_MAHJONG_APP_API_BASE_URL",
+      "forbidProductSameOriginFallback": false,
+      "corePackage": "sdkwork-mahjong-pc-core",
+      "source": "apps/sdkwork-mahjong-pc/packages/sdkwork-mahjong-pc-core/specs/component.spec.json"
+    }
+  ],
+  "permissions": {
+    "inheritanceMode": "module-catalog-with-overrides",
+    "inheritedManifests": []
+  },
+  "env": {},
+  "requiresPlatformGatewayProcess": false,
+  "issues": [],
+  "meta": {
+    "resolver": "sdkwork-specs/tools/lib/composition-resolver.mjs",
+    "credentialModes": {
+      "sdkwork-mahjong-app-sdk": "authenticated-app-api"
+    }
+  }
+}

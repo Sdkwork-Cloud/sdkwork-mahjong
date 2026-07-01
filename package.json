@@ -9,8 +9,8 @@
     "dev:browser": "node scripts/sdkwork-command.mjs dev --runtime-target browser --database postgres --service-layout unified-process --deployment-profile standalone",
     "build": "node scripts/sdkwork-command.mjs build --deployment-profile cloud",
     "test": "node scripts/sdkwork-command.mjs test",
-    "check": "node scripts/sdkwork-command.mjs check",
-    "verify": "node scripts/sdkwork-verify.mjs",
+    "check": "pnpm run check:app-composition && node scripts/sdkwork-command.mjs check",
+    "verify": "node scripts/sdkwork-verify.mjs && pnpm run check:app-composition",
     "clean": "node scripts/sdkwork-command.mjs clean",
     "typecheck": "tsc --noEmit",
     "format:rust": "cargo fmt",
@@ -21,7 +21,7 @@
     "sdk:generate:check": "node tools/mahjong_sdk_generate.mjs --check",
     "sdk:check": "node tools/mahjong_sdk_generate.mjs --check",
     "sdk:generate": "node tools/mahjong_sdk_generate.mjs",
-    "db:materialize:contract": "node tools/materialize_mahjong_database_contract.mjs",
+    "db:materialize:contract": "node ../sdkwork-specs/tools/materialize-database-contract-from-baseline.mjs --root . --baseline database/ddl/baseline/postgres/0001_mahjong_baseline.sql --module-id mahjong --owner sdkwork-mahjong --prefixes mj_ --engines postgres",
     "db:validate": "node ../sdkwork-specs/tools/check-database-framework-standard.mjs --root .",
     "db:plan": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . plan",
     "db:init": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . init",
@@ -37,7 +37,8 @@
     "topology:validate": "node ../sdkwork-app-topology/scripts/sdkwork-topology.mjs validate --root . --spec specs/topology.spec.json",
     "topology:plan": "node ../sdkwork-app-topology/scripts/sdkwork-topology.mjs plan --root . --spec specs/topology.spec.json",
     "gateway:package:cloud": "node ../sdkwork-app-topology/scripts/gateway-cloud-bundle.mjs bundle --root .",
-    "gateway:validate:cloud": "node ../sdkwork-app-topology/scripts/gateway-cloud-bundle.mjs validate --root ."
+    "gateway:validate:cloud": "node ../sdkwork-app-topology/scripts/gateway-cloud-bundle.mjs validate --root .",
+    "check:app-composition": "node ../sdkwork-specs/tools/verify-repo.mjs --root ."
   },
   "devDependencies": {
     "@sdkwork/utils": "workspace:*",

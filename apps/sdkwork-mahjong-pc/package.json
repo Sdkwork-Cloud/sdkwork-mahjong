@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "packageManager": "pnpm@10.32.1",
+  "packageManager": "pnpm@10.33.0",
   "workspaces": [
     "packages/*"
   ],
@@ -50,13 +50,13 @@
     "sdkwork-mahjong-pc-user": "workspace:*",
     "tailwind-merge": "^3.5.0",
     "vite": "^6.2.0",
-    "zustand": "^5.0.11"
+    "zustand": "^5.0.11",
+    "tailwindcss": "^4.1.14"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
     "@types/node": "^22.14.0",
     "autoprefixer": "^10.4.21",
-    "tailwindcss": "^4.1.14",
     "tsx": "^4.21.0",
     "turbo": "^2.4.4",
     "typescript": "~5.8.2",

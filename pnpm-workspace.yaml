@@ -1,7 +1,9 @@
 packages:
-  - "sdks/*"
-  - "packages/common/mahjong/*"
+  - "apps/sdkwork-mahjong-common"
+  - "apps/sdkwork-mahjong-common/packages/*"
+  - "apps/sdkwork-mahjong-pc"
   - "apps/sdkwork-mahjong-pc/packages/*"
+  - "sdks/*"
   - "../sdkwork-utils/packages/sdkwork-utils-typescript"
 
 catalog:
