@@ -12,7 +12,7 @@ export default defineConfig({
       formats: ['es']
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react-i18next', 'lucide-react', 'motion/react', 'next-themes', 'sdkwork-mahjong-pc-core', 'sdkwork-mahjong-pc-i18n']
+      external: ['react', 'react-dom', 'react-i18next', 'lucide-react', 'motion/react', 'next-themes', 'sdkwork-mahjong-pc-core']
     }
   }
 });
