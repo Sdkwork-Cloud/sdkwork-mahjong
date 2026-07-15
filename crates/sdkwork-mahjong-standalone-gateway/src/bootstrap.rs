@@ -1,5 +1,4 @@
 use axum::Router;
-use tower_http::cors::CorsLayer;
 
 use crate::{
     app_mahjong_match_router_with_store, backend_mahjong_match_router_with_store,
@@ -46,5 +45,8 @@ pub fn build_router(store: MahjongMatchStore) -> Router {
     Router::new()
         .merge(app_routes)
         .merge(backend_routes)
-        .layer(CorsLayer::permissive())
+        .layer(sdkwork_web_bootstrap::application_cors_layer_from_env(
+            &["SDKWORK_MAHJONG_ENVIRONMENT"],
+            &["SDKWORK_MAHJONG_CORS_ALLOWED_ORIGINS", "SDKWORK_CORS_ALLOWED_ORIGINS"],
+        ))
 }
