@@ -10,28 +10,23 @@ pub fn build_match_store() -> MahjongMatchStore {
     default_match_store()
 }
 
-pub async fn build_match_store_async() -> MahjongMatchStore {
+pub async fn build_match_store_async() -> Result<MahjongMatchStore, String> {
     if std::env::var("MAHJONG_DATABASE_URL").is_err() {
-        return default_match_store();
+        return Ok(default_match_store());
     }
 
-    match sdkwork_mahjong_database_host::bootstrap_mahjong_database_from_env().await {
-        Ok(host) => {
-            let repository = sdkwork_game_match_repository_sqlx::SqlxGameMatchRepository::new(
-                host.pool().clone(),
-            );
-            tracing::info!("mahjong match store using SQLx repository");
-            std::sync::Arc::new(sdkwork_game_match_service::GameMatchService::new(
-                sdkwork_game_match_repository_sqlx::GameMatchRepositoryBackend::Sqlx(Box::new(
-                    repository,
-                )),
-            ))
-        }
-        Err(error) => {
-            tracing::warn!("mahjong database bootstrap failed, using in-memory store: {error}");
-            default_match_store()
-        }
-    }
+    let host = sdkwork_mahjong_database_host::bootstrap_mahjong_database_from_env().await?;
+    let repository = sdkwork_game_match_repository_sqlx::SqlxGameMatchRepository::new(
+        host.pool().clone(),
+    );
+    tracing::info!("mahjong match store using SQLx repository");
+    Ok(std::sync::Arc::new(
+        sdkwork_game_match_service::GameMatchService::new(
+            sdkwork_game_match_repository_sqlx::GameMatchRepositoryBackend::Sqlx(Box::new(
+                repository,
+            )),
+        ),
+    ))
 }
 
 pub fn build_router(store: MahjongMatchStore) -> Router {

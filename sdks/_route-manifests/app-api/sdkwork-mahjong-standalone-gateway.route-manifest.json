@@ -18,54 +18,124 @@
     {
       "method": "GET",
       "path": "/health",
-      "operationId": "mahjong.health.check",
-      "tags": ["health"],
+      "operationId": "mahjong.health.retrieve",
+      "tags": [
+        "health"
+      ],
       "requestContext": "WebRequestContext",
       "apiSurface": "app-api",
-      "auth": { "mode": "public" },
-      "handler": { "module": "crate", "name": "mahjong_health_check" },
-      "schemas": { "request": null, "response": "MahjongHealthResponse", "problem": "ProblemDetail" },
-      "ownership": { "owner": "sdkwork-mahjong", "apiAuthority": "sdkwork-mahjong-app-api" },
-      "source": { "file": "apis/app-api/game/mahjong-app-api.openapi.json" }
+      "auth": {
+        "mode": "public"
+      },
+      "handler": {
+        "module": "crate",
+        "name": "mahjong_health_check"
+      },
+      "schemas": {
+        "request": null,
+        "response": "MahjongHealthResponse",
+        "problem": "ProblemDetail"
+      },
+      "ownership": {
+        "owner": "sdkwork-mahjong",
+        "apiAuthority": "sdkwork-mahjong-app-api"
+      },
+      "source": {
+        "file": "apis/app-api/game/mahjong-app-api.openapi.json"
+      }
     },
     {
       "method": "GET",
       "path": "/ready",
-      "operationId": "mahjong.ready.check",
-      "tags": ["health"],
+      "operationId": "mahjong.ready.retrieve",
+      "tags": [
+        "health"
+      ],
       "requestContext": "WebRequestContext",
       "apiSurface": "app-api",
-      "auth": { "mode": "public" },
-      "handler": { "module": "crate", "name": "mahjong_ready_check" },
-      "schemas": { "request": null, "response": "MahjongHealthResponse", "problem": "ProblemDetail" },
-      "ownership": { "owner": "sdkwork-mahjong", "apiAuthority": "sdkwork-mahjong-app-api" },
-      "source": { "file": "apis/app-api/game/mahjong-app-api.openapi.json" }
+      "auth": {
+        "mode": "public"
+      },
+      "handler": {
+        "module": "crate",
+        "name": "mahjong_ready_check"
+      },
+      "schemas": {
+        "request": null,
+        "response": "MahjongHealthResponse",
+        "problem": "ProblemDetail"
+      },
+      "ownership": {
+        "owner": "sdkwork-mahjong",
+        "apiAuthority": "sdkwork-mahjong-app-api"
+      },
+      "source": {
+        "file": "apis/app-api/game/mahjong-app-api.openapi.json"
+      }
     },
     {
       "method": "GET",
       "path": "/app/v3/api/mahjong/matches",
       "operationId": "mahjong.match.list",
-      "tags": ["mahjong"],
+      "tags": [
+        "mahjong"
+      ],
       "requestContext": "WebRequestContext",
       "apiSurface": "app-api",
-      "auth": { "mode": "dual-token", "required": true, "tenantScope": "tenant", "dataScope": "organization" },
-      "handler": { "module": "crate", "name": "mahjong_match_list" },
-      "schemas": { "request": null, "response": "MahjongApiResult", "problem": "ProblemDetail" },
-      "ownership": { "owner": "sdkwork-mahjong", "apiAuthority": "sdkwork-mahjong-app-api" },
-      "source": { "file": "apis/app-api/game/mahjong-app-api.openapi.json" }
+      "auth": {
+        "mode": "dual-token",
+        "required": true,
+        "tenantScope": "tenant",
+        "dataScope": "organization"
+      },
+      "handler": {
+        "module": "crate",
+        "name": "mahjong_match_list"
+      },
+      "schemas": {
+        "request": null,
+        "response": "MahjongApiResult",
+        "problem": "ProblemDetail"
+      },
+      "ownership": {
+        "owner": "sdkwork-mahjong",
+        "apiAuthority": "sdkwork-mahjong-app-api"
+      },
+      "source": {
+        "file": "apis/app-api/game/mahjong-app-api.openapi.json"
+      }
     },
     {
       "method": "GET",
       "path": "/app/v3/api/mahjong/matches/{matchId}",
       "operationId": "mahjong.match.retrieve",
-      "tags": ["mahjong"],
+      "tags": [
+        "mahjong"
+      ],
       "requestContext": "WebRequestContext",
       "apiSurface": "app-api",
-      "auth": { "mode": "dual-token", "required": true, "tenantScope": "tenant", "dataScope": "organization" },
-      "handler": { "module": "crate", "name": "mahjong_match_retrieve" },
-      "schemas": { "request": null, "response": "MahjongApiResult", "problem": "ProblemDetail" },
-      "ownership": { "owner": "sdkwork-mahjong", "apiAuthority": "sdkwork-mahjong-app-api" },
-      "source": { "file": "apis/app-api/game/mahjong-app-api.openapi.json" }
+      "auth": {
+        "mode": "dual-token",
+        "required": true,
+        "tenantScope": "tenant",
+        "dataScope": "organization"
+      },
+      "handler": {
+        "module": "crate",
+        "name": "mahjong_match_retrieve"
+      },
+      "schemas": {
+        "request": null,
+        "response": "MahjongApiResult",
+        "problem": "ProblemDetail"
+      },
+      "ownership": {
+        "owner": "sdkwork-mahjong",
+        "apiAuthority": "sdkwork-mahjong-app-api"
+      },
+      "source": {
+        "file": "apis/app-api/game/mahjong-app-api.openapi.json"
+      }
     }
   ]
 }

@@ -1819,6 +1819,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "sdkwork-mahjong-gateway-assembly"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "sdkwork-mahjong-standalone-gateway",
+]
+
+[[package]]
 name = "sdkwork-mahjong-standalone-gateway"
 version = "0.1.0"
 dependencies = [

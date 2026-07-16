@@ -19,7 +19,9 @@ async fn main() {
         "127.0.0.1:8097",
     );
 
-    let store = build_match_store_async().await;
+    let store = build_match_store_async()
+        .await
+        .expect("mahjong database bootstrap failed");
     let business = build_router(store);
     let app = service_router(business, ServiceRouterConfig::default().with_always_ready());
     let listener = tokio::net::TcpListener::bind(&bind_address)

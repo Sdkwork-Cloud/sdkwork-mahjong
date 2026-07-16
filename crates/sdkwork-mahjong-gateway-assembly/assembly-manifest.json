@@ -1,0 +1,9 @@
+{
+  "kind": "sdkwork.gateway.assembly",
+  "schemaVersion": 1,
+  "applicationCode": "mahjong",
+  "packageName": "sdkwork-mahjong-gateway-assembly",
+  "crateDir": "crates/sdkwork-mahjong-gateway-assembly",
+  "routeCrates": [],
+  "bootstrapOwner": "sdkwork-mahjong-standalone-gateway::bootstrap"
+}

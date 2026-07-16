@@ -1,6 +1,7 @@
 [workspace]
 resolver = "2"
 members = [
+    "crates/sdkwork-mahjong-gateway-assembly",
     "crates/sdkwork-mahjong-standalone-gateway",
     "crates/sdkwork-mahjong-database-host",
     "crates/sdkwork-game-match-service",
@@ -13,6 +14,7 @@ version = "0.1.0"
 
 [workspace.dependencies]
 sdkwork_mahjong_standalone_gateway = { package = "sdkwork-mahjong-standalone-gateway", path = "crates/sdkwork-mahjong-standalone-gateway" }
+sdkwork-mahjong-gateway-assembly = { path = "crates/sdkwork-mahjong-gateway-assembly" }
 sdkwork_mahjong_database_host = { package = "sdkwork-mahjong-database-host", path = "crates/sdkwork-mahjong-database-host" }
 sdkwork_game_match_service = { package = "sdkwork-game-match-service", path = "crates/sdkwork-game-match-service" }
 sdkwork_game_match_repository_sqlx = { package = "sdkwork-game-match-repository-sqlx", path = "crates/sdkwork-game-match-repository-sqlx" }
