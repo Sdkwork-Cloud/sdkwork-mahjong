@@ -18,7 +18,7 @@ SDKWork mahjong (麻将) application root. Provides match, room, and leaderboard
 
 ## Framework integration
 
-- **HTTP**: `sdkwork-web-framework` via `crates/sdkwork-mahjong-standalone-gateway`
+- **HTTP**: `sdkwork-web-framework` via `crates/sdkwork-api-mahjong-standalone-gateway`
 - **Database**: `sdkwork-database` via `crates/sdkwork-mahjong-database-host` and `database/`
 - **Utils**: `@sdkwork/utils` (TypeScript), `sdkwork-utils-rust` (Rust)
 - **Discovery**: not integrated (no RPC services yet; add when split-service RPC is required)

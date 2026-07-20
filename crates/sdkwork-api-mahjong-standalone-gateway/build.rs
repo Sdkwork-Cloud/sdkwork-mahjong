@@ -29,9 +29,9 @@ struct RouteManifestAuth {
 fn main() {
     let manifest_root = Path::new("../../sdks/_route-manifests");
     let app_manifest_path =
-        manifest_root.join("app-api/sdkwork-mahjong-standalone-gateway.route-manifest.json");
+        manifest_root.join("app-api/sdkwork-api-mahjong-standalone-gateway.route-manifest.json");
     let backend_manifest_path =
-        manifest_root.join("backend-api/sdkwork-mahjong-standalone-gateway.route-manifest.json");
+        manifest_root.join("backend-api/sdkwork-api-mahjong-standalone-gateway.route-manifest.json");
 
     println!("cargo:rerun-if-changed={}", app_manifest_path.display());
     println!("cargo:rerun-if-changed={}", backend_manifest_path.display());

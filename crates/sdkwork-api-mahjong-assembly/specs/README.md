@@ -2,4 +2,4 @@
 
 Component root: `crates/sdkwork-api-mahjong-assembly`
 
-API assembly manifest, business-router composition, and verification contract.
+Business-only gateway assembly with fail-fast database lifecycle bootstrap.

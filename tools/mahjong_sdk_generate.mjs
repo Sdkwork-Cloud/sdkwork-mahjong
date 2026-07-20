@@ -8,12 +8,12 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const checkMode = process.argv.includes('--check');
 
 const manifests = [
-  joinPath('sdks', '_route-manifests', 'app-api', 'sdkwork-mahjong-standalone-gateway.route-manifest.json'),
+  joinPath('sdks', '_route-manifests', 'app-api', 'sdkwork-api-mahjong-standalone-gateway.route-manifest.json'),
   joinPath(
     'sdks',
     '_route-manifests',
     'backend-api',
-    'sdkwork-mahjong-standalone-gateway.route-manifest.json',
+    'sdkwork-api-mahjong-standalone-gateway.route-manifest.json',
   ),
 ];
 

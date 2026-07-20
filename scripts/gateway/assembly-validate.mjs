@@ -5,9 +5,9 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 for (const relativePath of [
-  'crates/sdkwork-mahjong-gateway-assembly/Cargo.toml',
-  'crates/sdkwork-mahjong-gateway-assembly/assembly-manifest.json',
-  'crates/sdkwork-mahjong-gateway-assembly/specs/component.spec.json',
+  'crates/sdkwork-api-mahjong-assembly/Cargo.toml',
+  'crates/sdkwork-api-mahjong-assembly/assembly-manifest.json',
+  'crates/sdkwork-api-mahjong-assembly/specs/component.spec.json',
 ]) {
   if (!existsSync(path.join(root, relativePath))) {
     throw new Error(`missing ${relativePath}`);

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "kind": "sdkwork.route.manifest",
-  "packageName": "sdkwork-mahjong-standalone-gateway",
+  "packageName": "sdkwork-api-mahjong-standalone-gateway",
   "surface": "app-api",
   "owner": "sdkwork-mahjong",
   "domain": "game",
@@ -10,8 +10,8 @@
   "sdkFamily": "sdkwork-mahjong-app-sdk",
   "prefix": "/app/v3/api",
   "source": {
-    "crateRoot": "crates/sdkwork-mahjong-standalone-gateway",
-    "crateImport": "sdkwork_mahjong_standalone_gateway",
+    "crateRoot": "crates/sdkwork-api-mahjong-standalone-gateway",
+    "crateImport": "sdkwork_api_mahjong_standalone_gateway",
     "openapiAuthority": "apis/app-api/game/mahjong-app-api.openapi.json"
   },
   "routes": [

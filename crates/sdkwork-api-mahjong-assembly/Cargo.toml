@@ -11,3 +11,4 @@ path = "src/lib.rs"
 [dependencies]
 axum.workspace = true
 tokio.workspace = true
+sdkwork_api_mahjong_standalone_gateway.workspace = true
