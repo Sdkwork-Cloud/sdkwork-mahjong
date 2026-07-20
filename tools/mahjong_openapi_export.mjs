@@ -17,6 +17,30 @@ const outputPaths = {
 };
 
 const schemas = {
+  ProblemDetail: {
+    type: 'object',
+    additionalProperties: true,
+    required: ['type', 'title', 'status', 'detail', 'code', 'traceId'],
+    properties: {
+      type: { type: 'string', format: 'uri-reference' },
+      title: { type: 'string' },
+      status: { type: 'integer', format: 'int32' },
+      detail: { type: 'string' },
+      code: { type: 'integer', format: 'int32' },
+      traceId: { type: 'string', format: 'uuid' },
+    },
+  },
+  PageInfo: {
+    type: 'object',
+    required: ['mode'],
+    properties: {
+      mode: { type: 'string', enum: ['offset', 'cursor'] },
+      page: { type: 'integer', format: 'int32' },
+      pageSize: { type: 'integer', format: 'int32' },
+      totalItems: { type: 'string', format: 'int64', pattern: '^-?[0-9]+$' },
+      totalPages: { type: 'integer', format: 'int32' },
+    },
+  },
   SdkWorkMatchResourceResponse: {
     type: 'object',
     additionalProperties: false,
@@ -42,7 +66,7 @@ const schemas = {
         required: ['items', 'pageInfo'],
         properties: {
           items: { type: 'array', items: { $ref: '#/components/schemas/MahjongMatchItem' } },
-          pageInfo: { type: 'object' },
+          pageInfo: { $ref: '#/components/schemas/PageInfo' },
         },
       },
       traceId: { type: 'string', format: 'uuid' },
@@ -77,6 +101,23 @@ function buildOpenApi(title, operations) {
   };
 }
 
+function responses(schemaName) {
+  return {
+    200: {
+      description: 'OK',
+      content: {
+        'application/json': { schema: { $ref: `#/components/schemas/${schemaName}` } },
+      },
+    },
+    default: {
+      description: 'Error',
+      content: {
+        'application/problem+json': { schema: { $ref: '#/components/schemas/ProblemDetail' } },
+      },
+    },
+  };
+}
+
 const appOperations = {
   '/app/v3/api/mahjong/matches': {
     get: {
@@ -84,7 +125,7 @@ const appOperations = {
       tags: ['mahjong'],
       'x-sdkwork-request-context': 'WebRequestContext',
       'x-sdkwork-api-surface': 'app-api',
-      responses: { 200: { description: 'OK' } },
+      responses: responses('SdkWorkMatchPageResponse'),
     },
   },
   '/app/v3/api/mahjong/matches/{matchId}': {
@@ -93,7 +134,15 @@ const appOperations = {
       tags: ['mahjong'],
       'x-sdkwork-request-context': 'WebRequestContext',
       'x-sdkwork-api-surface': 'app-api',
-      responses: { 200: { description: 'OK' } },
+      parameters: [
+        {
+          name: 'matchId',
+          in: 'path',
+          required: true,
+          schema: { type: 'string' },
+        },
+      ],
+      responses: responses('SdkWorkMatchResourceResponse'),
     },
   },
 };
@@ -105,7 +154,7 @@ const backendOperations = {
       tags: ['mahjong'],
       'x-sdkwork-request-context': 'WebRequestContext',
       'x-sdkwork-api-surface': 'backend-api',
-      responses: { 200: { description: 'OK' } },
+      responses: responses('SdkWorkMatchPageResponse'),
     },
   },
 };
