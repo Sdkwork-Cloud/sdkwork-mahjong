@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "kind": "sdkwork.route.manifest",
-  "packageName": "sdkwork-api-mahjong-standalone-gateway",
+  "packageName": "sdkwork-routes-match-backend-api",
   "surface": "backend-api",
   "owner": "sdkwork-mahjong",
   "domain": "game",
@@ -10,8 +10,8 @@
   "sdkFamily": "sdkwork-mahjong-backend-sdk",
   "prefix": "/backend/v3/api",
   "source": {
-    "crateRoot": "crates/sdkwork-api-mahjong-standalone-gateway",
-    "crateImport": "sdkwork_api_mahjong_standalone_gateway",
+    "crateRoot": "crates/sdkwork-routes-match-backend-api",
+    "crateImport": "sdkwork_routes_match_backend_api",
     "openapiAuthority": "apis/backend-api/game/mahjong-backend-api.openapi.json"
   },
   "routes": [
@@ -24,7 +24,7 @@
       "apiSurface": "backend-api",
       "auth": { "mode": "dual-token", "required": true, "tenantScope": "tenant", "dataScope": "organization" },
       "handler": { "module": "crate", "name": "backend_mahjong_match_list" },
-      "schemas": { "request": null, "response": "MahjongApiResult", "problem": "ProblemDetail" },
+      "schemas": { "request": null, "response": "SdkWorkMatchPageResponse", "problem": "ProblemDetail" },
       "ownership": { "owner": "sdkwork-mahjong", "apiAuthority": "sdkwork-mahjong-backend-api" },
       "source": { "file": "apis/backend-api/game/mahjong-backend-api.openapi.json" }
     }

@@ -2,8 +2,31 @@
   "kind": "sdkwork.api.assembly",
   "schemaVersion": 1,
   "applicationCode": "mahjong",
-  "apiMode": "none",
+  "apiMode": "served",
   "packageName": "sdkwork-api-mahjong-assembly",
   "crateDir": "crates/sdkwork-api-mahjong-assembly",
-  "routeCrates": []
+  "routeCrates": [
+    {
+      "packageName": "sdkwork-routes-match-app-api",
+      "memberDir": "crates/sdkwork-routes-match-app-api",
+      "libName": "sdkwork_routes_match_app_api",
+      "surface": "app-api",
+      "pathPrefix": null,
+      "mountOrder": 0,
+      "componentRef": "crates/sdkwork-routes-match-app-api/specs/component.spec.json",
+      "routeManifestRef": "crates/sdkwork-routes-match-app-api/sdks/_route-manifests/app-api/sdkwork-routes-match-app-api.route-manifest.json",
+      "sourceRef": "crates/sdkwork-routes-match-app-api/Cargo.toml"
+    },
+    {
+      "packageName": "sdkwork-routes-match-backend-api",
+      "memberDir": "crates/sdkwork-routes-match-backend-api",
+      "libName": "sdkwork_routes_match_backend_api",
+      "surface": "backend-api",
+      "pathPrefix": null,
+      "mountOrder": 1,
+      "componentRef": "crates/sdkwork-routes-match-backend-api/specs/component.spec.json",
+      "routeManifestRef": "crates/sdkwork-routes-match-backend-api/sdks/_route-manifests/backend-api/sdkwork-routes-match-backend-api.route-manifest.json",
+      "sourceRef": "crates/sdkwork-routes-match-backend-api/Cargo.toml"
+    }
+  ]
 }

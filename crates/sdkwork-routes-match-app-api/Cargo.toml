@@ -27,5 +27,6 @@ sdkwork-iam-web-adapter.workspace = true
 sdkwork-utils-rust.workspace = true
 
 [dev-dependencies]
+serde_json.workspace = true
 tokio.workspace = true
 tower = { version = "0.5", features = ["util"] }

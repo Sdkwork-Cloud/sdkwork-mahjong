@@ -17,23 +17,35 @@ const outputPaths = {
 };
 
 const schemas = {
-  MahjongApiResult: {
+  SdkWorkMatchResourceResponse: {
     type: 'object',
     additionalProperties: false,
-    required: ['code', 'message', 'data'],
+    required: ['code', 'data', 'traceId'],
     properties: {
-      code: { type: 'string' },
-      message: { type: 'string' },
-      data: {},
+      code: { type: 'integer', format: 'int32', const: 0 },
+      data: {
+        type: 'object',
+        required: ['item'],
+        properties: { item: { $ref: '#/components/schemas/MahjongMatchItem' } },
+      },
+      traceId: { type: 'string', format: 'uuid' },
     },
   },
-  MahjongHealthResponse: {
+  SdkWorkMatchPageResponse: {
     type: 'object',
     additionalProperties: false,
-    required: ['status', 'service'],
+    required: ['code', 'data', 'traceId'],
     properties: {
-      status: { type: 'string' },
-      service: { type: 'string' },
+      code: { type: 'integer', format: 'int32', const: 0 },
+      data: {
+        type: 'object',
+        required: ['items', 'pageInfo'],
+        properties: {
+          items: { type: 'array', items: { $ref: '#/components/schemas/MahjongMatchItem' } },
+          pageInfo: { type: 'object' },
+        },
+      },
+      traceId: { type: 'string', format: 'uuid' },
     },
   },
   MahjongMatchItem: {
@@ -66,24 +78,6 @@ function buildOpenApi(title, operations) {
 }
 
 const appOperations = {
-  '/health': {
-    get: {
-      operationId: 'mahjong.health.check',
-      tags: ['health'],
-      'x-sdkwork-request-context': 'WebRequestContext',
-      'x-sdkwork-api-surface': 'app-api',
-      responses: { 200: { description: 'OK' } },
-    },
-  },
-  '/ready': {
-    get: {
-      operationId: 'mahjong.ready.check',
-      tags: ['health'],
-      'x-sdkwork-request-context': 'WebRequestContext',
-      'x-sdkwork-api-surface': 'app-api',
-      responses: { 200: { description: 'OK' } },
-    },
-  },
   '/app/v3/api/mahjong/matches': {
     get: {
       operationId: 'mahjong.match.list',

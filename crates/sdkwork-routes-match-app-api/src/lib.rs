@@ -71,7 +71,7 @@ async fn list_matches(
                     mode: PageMode::Offset,
                     page: Some(page.page as i32),
                     page_size: Some(page.page_size as i32),
-                    total_items: Some(page.total as i64),
+                    total_items: Some(page.total.to_string()),
                     total_pages: Some(page.total.div_ceil(page.page_size as u64) as i32),
                     next_cursor: None,
                     has_more: None,
@@ -96,7 +96,10 @@ async fn get_match(
 
 fn success<T: serde::Serialize>(data: T, status: StatusCode) -> Response {
     let trace_id = uuid();
-    let mut response = (status, Json(SdkWorkApiResponse::success(data, trace_id.clone())))
+    let mut response = (
+        status,
+        Json(SdkWorkApiResponse::success(data, trace_id.clone())),
+    )
         .into_response();
     if let Ok(value) = HeaderValue::from_str(&trace_id) {
         response

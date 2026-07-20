@@ -1,7 +1,7 @@
 use std::sync::Arc;
 
 use axum::extract::{Query, State};
-use axum::http::{HeaderName, HeaderValue, StatusCode};
+use axum::http::{HeaderName, HeaderValue};
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
@@ -62,7 +62,7 @@ async fn list_matches(
                     mode: PageMode::Offset,
                     page: Some(page.page as i32),
                     page_size: Some(page.page_size as i32),
-                    total_items: Some(page.total as i64),
+                    total_items: Some(page.total.to_string()),
                     total_pages: Some(total_pages),
                     next_cursor: None,
                     has_more: None,

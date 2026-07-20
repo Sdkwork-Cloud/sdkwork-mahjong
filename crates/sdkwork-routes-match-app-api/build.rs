@@ -1,5 +1,5 @@
-use std::{env, fs};
 use std::path::Path;
+use std::{env, fs};
 
 use serde::Deserialize;
 
@@ -63,7 +63,11 @@ fn render_routes(routes: &[RouteManifestRoute]) -> String {
             route.path,
             tag,
             route.operation_id,
-            if route.idempotent { ".with_idempotent(true)" } else { "" },
+            if route.idempotent {
+                ".with_idempotent(true)"
+            } else {
+                ""
+            },
         ));
     }
     output.push_str("];\n");
