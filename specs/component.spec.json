@@ -56,7 +56,7 @@
       "package.json#scripts.dev",
       "package.json#scripts.verify"
     ],
-    "routeManifest": "sdks/_route-manifests/app-api/sdkwork-api-mahjong-standalone-gateway.route-manifest.json",
+    "routeManifest": "crates/sdkwork-api-mahjong-assembly/assembly-manifest.json",
     "sdkClients": ["sdkwork-mahjong-app-sdk", "sdkwork-mahjong-backend-sdk"],
     "events": [],
     "configKeys": [

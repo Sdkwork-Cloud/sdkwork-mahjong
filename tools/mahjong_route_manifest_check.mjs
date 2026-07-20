@@ -6,8 +6,8 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const manifests = [
-  'sdks/_route-manifests/app-api/sdkwork-api-mahjong-standalone-gateway.route-manifest.json',
-  'sdks/_route-manifests/backend-api/sdkwork-api-mahjong-standalone-gateway.route-manifest.json',
+  'sdks/_route-manifests/app-api/sdkwork-routes-match-app-api.route-manifest.json',
+  'sdks/_route-manifests/backend-api/sdkwork-routes-match-backend-api.route-manifest.json',
 ];
 
 for (const relativePath of manifests) {
