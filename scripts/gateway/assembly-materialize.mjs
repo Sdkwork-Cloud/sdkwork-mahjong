@@ -8,4 +8,4 @@ const manifest = path.join(root, 'crates/sdkwork-mahjong-gateway-assembly/assemb
 if (!existsSync(manifest)) {
   throw new Error('Mahjong gateway assembly manifest is missing');
 }
-console.log('gateway:assembly:materialize preserved crates/sdkwork-mahjong-gateway-assembly');
+console.log('api:assembly:materialize preserved crates/sdkwork-mahjong-gateway-assembly');

@@ -10,9 +10,14 @@
     "domain": "game",
     "capability": "mahjong-gateway-assembly",
     "surface": "assembly",
-    "languages": ["rust"],
+    "languages": [
+      "rust"
+    ],
     "generated": false,
-    "manifests": ["Cargo.toml", "assembly-manifest.json"]
+    "manifests": [
+      "Cargo.toml",
+      "assembly-manifest.json"
+    ]
   },
   "canonicalSpecs": [
     {
@@ -27,7 +32,9 @@
     }
   ],
   "contracts": {
-    "publicExports": ["."],
+    "publicExports": [
+      "."
+    ],
     "runtimeEntrypoints": [],
     "routeManifest": "assembly-manifest.json",
     "sdkClients": [],
@@ -35,11 +42,13 @@
     "dependencyApiExports": [],
     "dependencyApiSurfaces": [],
     "events": [],
-    "configKeys": ["MAHJONG_DATABASE_URL"]
+    "configKeys": [
+      "MAHJONG_DATABASE_URL"
+    ]
   },
   "verification": {
     "commands": [
-      "pnpm run gateway:assembly:validate",
+      "pnpm run api:assembly:validate",
       "cargo check -p sdkwork-mahjong-gateway-assembly"
     ]
   }

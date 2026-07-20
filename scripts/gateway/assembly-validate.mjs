@@ -13,4 +13,4 @@ for (const relativePath of [
     throw new Error(`missing ${relativePath}`);
   }
 }
-console.log('gateway:assembly:validate passed for sdkwork-mahjong');
+console.log('api:assembly:validate passed for sdkwork-mahjong');
