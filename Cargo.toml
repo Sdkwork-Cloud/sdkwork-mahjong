@@ -1,6 +1,7 @@
 [workspace]
 resolver = "2"
 members = [
+    "crates/sdkwork-api-mahjong-assembly",
     "crates/sdkwork-mahjong-gateway-assembly",
     "crates/sdkwork-mahjong-standalone-gateway",
     "crates/sdkwork-mahjong-database-host",

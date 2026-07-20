@@ -1,0 +1,9 @@
+{
+  "kind": "sdkwork.api.assembly",
+  "schemaVersion": 1,
+  "applicationCode": "mahjong",
+  "apiMode": "none",
+  "packageName": "sdkwork-api-mahjong-assembly",
+  "crateDir": "crates/sdkwork-api-mahjong-assembly",
+  "routeCrates": []
+}
