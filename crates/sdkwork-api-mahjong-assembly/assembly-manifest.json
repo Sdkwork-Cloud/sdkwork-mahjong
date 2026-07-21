@@ -14,7 +14,7 @@
       "pathPrefix": null,
       "mountOrder": 0,
       "componentRef": "crates/sdkwork-routes-match-app-api/specs/component.spec.json",
-      "routeManifestRef": "crates/sdkwork-routes-match-app-api/sdks/_route-manifests/app-api/sdkwork-routes-match-app-api.route-manifest.json",
+      "routeManifestRef": "sdks/_route-manifests/app-api/sdkwork-routes-match-app-api.route-manifest.json",
       "sourceRef": "crates/sdkwork-routes-match-app-api/Cargo.toml"
     },
     {
@@ -25,7 +25,7 @@
       "pathPrefix": null,
       "mountOrder": 1,
       "componentRef": "crates/sdkwork-routes-match-backend-api/specs/component.spec.json",
-      "routeManifestRef": "crates/sdkwork-routes-match-backend-api/sdks/_route-manifests/backend-api/sdkwork-routes-match-backend-api.route-manifest.json",
+      "routeManifestRef": "sdks/_route-manifests/backend-api/sdkwork-routes-match-backend-api.route-manifest.json",
       "sourceRef": "crates/sdkwork-routes-match-backend-api/Cargo.toml"
     }
   ]
