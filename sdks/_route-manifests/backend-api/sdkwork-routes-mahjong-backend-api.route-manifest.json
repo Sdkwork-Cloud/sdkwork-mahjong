@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "kind": "sdkwork.route.manifest",
-  "packageName": "sdkwork-routes-match-backend-api",
+  "packageName": "sdkwork-routes-mahjong-backend-api",
   "surface": "backend-api",
   "owner": "sdkwork-mahjong",
   "domain": "game",
@@ -10,8 +10,8 @@
   "sdkFamily": "sdkwork-mahjong-backend-sdk",
   "prefix": "/backend/v3/api",
   "source": {
-    "crateRoot": "crates/sdkwork-routes-match-backend-api",
-    "crateImport": "sdkwork_routes_match_backend_api",
+    "crateRoot": "crates/sdkwork-routes-mahjong-backend-api",
+    "crateImport": "sdkwork_routes_mahjong_backend_api",
     "openapiAuthority": "apis/backend-api/game/mahjong-backend-api.openapi.json"
   },
   "routes": [

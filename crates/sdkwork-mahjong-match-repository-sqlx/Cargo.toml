@@ -1,5 +1,5 @@
 [package]
-name = "sdkwork-game-match-repository-sqlx"
+name = "sdkwork-mahjong-match-repository-sqlx"
 version.workspace = true
 edition.workspace = true
 license = "Apache-2.0"
@@ -11,7 +11,7 @@ path = "src/lib.rs"
 [dependencies]
 async-trait.workspace = true
 sdkwork-database-sqlx.workspace = true
-sdkwork_game_match_service.workspace = true
+sdkwork_mahjong_match_service.workspace = true
 sdkwork-utils-rust.workspace = true
 serde.workspace = true
 sqlx.workspace = true

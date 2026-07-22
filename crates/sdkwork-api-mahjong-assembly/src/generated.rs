@@ -4,6 +4,6 @@ pub const ROUTE_CRATE_COUNT: usize = 2;
 
 #[allow(dead_code)]
 pub const ROUTE_CRATE_PACKAGES: &[&str] = &[
-    "sdkwork-routes-match-app-api",
-    "sdkwork-routes-match-backend-api",
+    "sdkwork-routes-mahjong-app-api",
+    "sdkwork-routes-mahjong-backend-api",
 ];

@@ -3,11 +3,11 @@ resolver = "2"
 members = [
     "crates/sdkwork-api-mahjong-assembly",
     "crates/sdkwork-api-mahjong-standalone-gateway",
-    "crates/sdkwork-routes-match-app-api",
-    "crates/sdkwork-routes-match-backend-api",
+    "crates/sdkwork-routes-mahjong-app-api",
+    "crates/sdkwork-routes-mahjong-backend-api",
     "crates/sdkwork-mahjong-database-host",
-    "crates/sdkwork-game-match-service",
-    "crates/sdkwork-game-match-repository-sqlx",
+    "crates/sdkwork-mahjong-match-service",
+    "crates/sdkwork-mahjong-match-repository-sqlx",
 ]
 
 [workspace.package]
@@ -16,11 +16,11 @@ version = "0.1.0"
 
 [workspace.dependencies]
 sdkwork-api-mahjong-assembly = { path = "crates/sdkwork-api-mahjong-assembly" }
-sdkwork-routes-match-app-api = { path = "crates/sdkwork-routes-match-app-api" }
-sdkwork-routes-match-backend-api = { path = "crates/sdkwork-routes-match-backend-api" }
+sdkwork-routes-mahjong-app-api = { path = "crates/sdkwork-routes-mahjong-app-api" }
+sdkwork-routes-mahjong-backend-api = { path = "crates/sdkwork-routes-mahjong-backend-api" }
 sdkwork_mahjong_database_host = { package = "sdkwork-mahjong-database-host", path = "crates/sdkwork-mahjong-database-host" }
-sdkwork_game_match_service = { package = "sdkwork-game-match-service", path = "crates/sdkwork-game-match-service" }
-sdkwork_game_match_repository_sqlx = { package = "sdkwork-game-match-repository-sqlx", path = "crates/sdkwork-game-match-repository-sqlx" }
+sdkwork_mahjong_match_service = { package = "sdkwork-mahjong-match-service", path = "crates/sdkwork-mahjong-match-service" }
+sdkwork_mahjong_match_repository_sqlx = { package = "sdkwork-mahjong-match-repository-sqlx", path = "crates/sdkwork-mahjong-match-repository-sqlx" }
 sdkwork-web-core = { path = "../sdkwork-web-framework/crates/sdkwork-web-core" }
 sdkwork-web-axum = { path = "../sdkwork-web-framework/crates/sdkwork-web-axum" }
 sdkwork-web-contract = { path = "../sdkwork-web-framework/crates/sdkwork-web-contract" }

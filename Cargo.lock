@@ -1630,11 +1630,11 @@ name = "sdkwork-api-mahjong-assembly"
 version = "0.1.0"
 dependencies = [
  "axum",
- "sdkwork-game-match-repository-sqlx",
- "sdkwork-game-match-service",
  "sdkwork-mahjong-database-host",
- "sdkwork-routes-match-app-api",
- "sdkwork-routes-match-backend-api",
+ "sdkwork-mahjong-match-repository-sqlx",
+ "sdkwork-mahjong-match-service",
+ "sdkwork-routes-mahjong-app-api",
+ "sdkwork-routes-mahjong-backend-api",
  "sdkwork-web-bootstrap",
  "tokio",
  "tracing",
@@ -1733,31 +1733,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "sdkwork-game-match-repository-sqlx"
-version = "0.1.0"
-dependencies = [
- "async-trait",
- "sdkwork-database-sqlx",
- "sdkwork-game-match-service",
- "sdkwork-utils-rust",
- "serde",
- "sqlx",
- "tokio",
-]
-
-[[package]]
-name = "sdkwork-game-match-service"
-version = "0.1.0"
-dependencies = [
- "async-trait",
- "pretty_assertions",
- "sdkwork-utils-rust",
- "serde",
- "serde_json",
- "tokio",
-]
-
-[[package]]
 name = "sdkwork-iam-bootstrap"
 version = "0.1.0"
 dependencies = [
@@ -1848,13 +1823,38 @@ dependencies = [
 ]
 
 [[package]]
-name = "sdkwork-routes-match-app-api"
+name = "sdkwork-mahjong-match-repository-sqlx"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "sdkwork-database-sqlx",
+ "sdkwork-mahjong-match-service",
+ "sdkwork-utils-rust",
+ "serde",
+ "sqlx",
+ "tokio",
+]
+
+[[package]]
+name = "sdkwork-mahjong-match-service"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "pretty_assertions",
+ "sdkwork-utils-rust",
+ "serde",
+ "serde_json",
+ "tokio",
+]
+
+[[package]]
+name = "sdkwork-routes-mahjong-app-api"
 version = "0.1.0"
 dependencies = [
  "axum",
- "sdkwork-game-match-repository-sqlx",
- "sdkwork-game-match-service",
  "sdkwork-iam-web-adapter",
+ "sdkwork-mahjong-match-repository-sqlx",
+ "sdkwork-mahjong-match-service",
  "sdkwork-utils-rust",
  "sdkwork-web-axum",
  "sdkwork-web-bootstrap",
@@ -1867,13 +1867,13 @@ dependencies = [
 ]
 
 [[package]]
-name = "sdkwork-routes-match-backend-api"
+name = "sdkwork-routes-mahjong-backend-api"
 version = "0.1.0"
 dependencies = [
  "axum",
- "sdkwork-game-match-repository-sqlx",
- "sdkwork-game-match-service",
  "sdkwork-iam-web-adapter",
+ "sdkwork-mahjong-match-repository-sqlx",
+ "sdkwork-mahjong-match-service",
  "sdkwork-utils-rust",
  "sdkwork-web-axum",
  "sdkwork-web-bootstrap",

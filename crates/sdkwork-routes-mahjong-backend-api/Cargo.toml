@@ -1,5 +1,5 @@
 [package]
-name = "sdkwork-routes-match-backend-api"
+name = "sdkwork-routes-mahjong-backend-api"
 version.workspace = true
 edition.workspace = true
 license = "Apache-2.0"
@@ -7,7 +7,7 @@ description = "SDKWork Mahjong match backend-api routes."
 build = "build.rs"
 
 [lib]
-name = "sdkwork_routes_match_backend_api"
+name = "sdkwork_routes_mahjong_backend_api"
 path = "src/lib.rs"
 
 [build-dependencies]
@@ -17,8 +17,8 @@ serde_json = { workspace = true }
 [dependencies]
 axum.workspace = true
 serde.workspace = true
-sdkwork_game_match_repository_sqlx.workspace = true
-sdkwork_game_match_service.workspace = true
+sdkwork_mahjong_match_repository_sqlx.workspace = true
+sdkwork_mahjong_match_service.workspace = true
 sdkwork-web-axum.workspace = true
 sdkwork-web-contract.workspace = true
 sdkwork-web-core.workspace = true

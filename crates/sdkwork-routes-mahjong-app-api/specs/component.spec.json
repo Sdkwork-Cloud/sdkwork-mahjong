@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "kind": "sdkwork.component.spec",
   "component": {
-    "name": "sdkwork-routes-match-app-api",
+    "name": "sdkwork-routes-mahjong-app-api",
     "displayName": "SDKWork Mahjong Match App API Routes",
     "version": "0.1.0",
     "type": "rust-route-crate",
-    "root": "crates/sdkwork-routes-match-app-api",
+    "root": "crates/sdkwork-routes-mahjong-app-api",
     "domain": "game",
     "capability": "match",
     "surface": "app-api",
@@ -52,13 +52,13 @@
     ],
     "providedPorts": [],
     "requiredPorts": [
-      "sdkwork-game-match-service"
+      "sdkwork-mahjong-match-service"
     ],
     "runtimeEntrypoints": [
       "gateway_mount",
       "routes"
     ],
-    "routeManifest": "sdks/_route-manifests/app-api/sdkwork-routes-match-app-api.route-manifest.json",
+    "routeManifest": "sdks/_route-manifests/app-api/sdkwork-routes-mahjong-app-api.route-manifest.json",
     "sdkClients": [],
     "sdkDependencies": [],
     "dependencyApiExports": [],
@@ -68,7 +68,7 @@
   },
   "verification": {
     "commands": [
-      "cargo test -p sdkwork-routes-match-app-api"
+      "cargo test -p sdkwork-routes-mahjong-app-api"
     ]
   }
 }

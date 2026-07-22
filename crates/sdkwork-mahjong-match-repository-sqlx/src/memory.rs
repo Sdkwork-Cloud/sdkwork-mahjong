@@ -1,5 +1,5 @@
 use async_trait::async_trait;
-use sdkwork_game_match_service::{
+use sdkwork_mahjong_match_service::{
     GameError, GameMatchItem, GameMatchPage, GameMatchQuery, GameMatchRepository, GameResult,
 };
 
@@ -56,7 +56,7 @@ impl GameMatchRepository for InMemoryGameMatchRepository {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use sdkwork_game_match_service::GameMatchQuery;
+    use sdkwork_mahjong_match_service::GameMatchQuery;
 
     #[tokio::test]
     async fn list_matches_paginates_items() {

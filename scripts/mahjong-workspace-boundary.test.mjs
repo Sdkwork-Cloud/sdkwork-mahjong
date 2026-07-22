@@ -18,7 +18,7 @@ test('workspace exposes sdkwork.app.config.json with game domain', () => {
 test('route manifests declare WebRequestContext on protected routes', () => {
   const manifestPath = path.join(
     root,
-    'sdks/_route-manifests/app-api/sdkwork-routes-match-app-api.route-manifest.json',
+    'sdks/_route-manifests/app-api/sdkwork-routes-mahjong-app-api.route-manifest.json',
   );
   const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
   const protectedRoute = manifest.routes.find((route) => route.path.includes('/mahjong/matches'));

@@ -5,8 +5,8 @@ use axum::http::{HeaderName, HeaderValue, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
-use sdkwork_game_match_repository_sqlx::{GameMatchRepositoryBackend, InMemoryGameMatchRepository};
-use sdkwork_game_match_service::{GameError, GameMatchQuery, GameMatchService};
+use sdkwork_mahjong_match_repository_sqlx::{GameMatchRepositoryBackend, InMemoryGameMatchRepository};
+use sdkwork_mahjong_match_service::{GameError, GameMatchQuery, GameMatchService};
 use sdkwork_iam_web_adapter::{build_web_framework_layer, IamWebRequestContextResolver};
 use sdkwork_utils_rust::{
     uuid, PageInfo, PageMode, SdkWorkApiResponse, SdkWorkPageData, SdkWorkResourceData,

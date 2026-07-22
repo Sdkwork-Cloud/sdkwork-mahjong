@@ -1,5 +1,5 @@
 [package]
-name = "sdkwork-game-match-service"
+name = "sdkwork-mahjong-match-service"
 version.workspace = true
 edition.workspace = true
 license = "Apache-2.0"

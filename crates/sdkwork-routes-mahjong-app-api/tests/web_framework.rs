@@ -3,7 +3,7 @@ use axum::http::{Request, StatusCode};
 use sdkwork_web_core::{access_token_jwt, auth_token_jwt};
 use tower::ServiceExt;
 
-use sdkwork_routes_match_app_api::{default_match_store, gateway_mount};
+use sdkwork_routes_mahjong_app_api::{default_match_store, gateway_mount};
 
 static DEV_AUTH_ENV_LOCK: std::sync::Mutex<()> = std::sync::Mutex::new(());
 

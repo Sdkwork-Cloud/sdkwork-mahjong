@@ -27,7 +27,7 @@ struct RouteManifestAuth {
 
 fn main() {
     let manifest_path = Path::new(
-        "../../sdks/_route-manifests/app-api/sdkwork-routes-match-app-api.route-manifest.json",
+        "../../sdks/_route-manifests/app-api/sdkwork-routes-mahjong-app-api.route-manifest.json",
     );
     println!("cargo:rerun-if-changed={}", manifest_path.display());
     let raw = fs::read_to_string(manifest_path)
