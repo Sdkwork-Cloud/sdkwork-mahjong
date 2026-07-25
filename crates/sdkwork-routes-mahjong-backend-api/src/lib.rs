@@ -96,6 +96,9 @@ fn map_error(error: GameError) -> Response {
             kind,
             message: error.message().to_owned(),
             retry_after_seconds: None,
+            auth_profile: None,
+            failed_stage: None,
+            reason: None,
         },
         ProblemCorrelation::new(None, Some(&trace_id)),
     )
