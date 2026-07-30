@@ -22,6 +22,4 @@ sdkwork_mahjong_match_service.workspace = true
 sdkwork-web-axum.workspace = true
 sdkwork-web-contract.workspace = true
 sdkwork-web-core.workspace = true
-sdkwork-web-bootstrap.workspace = true
-sdkwork-iam-web-adapter.workspace = true
 sdkwork-utils-rust.workspace = true

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.component.spec",
+  "component": {
+    "name": "sdkwork-api-mahjong-standalone-gateway",
+    "type": "rust-api-standalone-gateway",
+    "root": "crates/sdkwork-api-mahjong-standalone-gateway",
+    "domain": "game",
+    "capability": "api-gateway",
+    "surface": "gateway-api",
+    "languages": ["rust"],
+    "generated": false
+  },
+  "canonicalSpecs": [
+    { "file": "API_ASSEMBLY_SPEC.md", "path": "../../../sdkwork-specs/API_ASSEMBLY_SPEC.md", "purpose": "Complete API contribution consumption." },
+    { "file": "APPLICATION_GATEWAY_SPEC.md", "path": "../../../sdkwork-specs/APPLICATION_GATEWAY_SPEC.md", "purpose": "Thin standalone host contract." },
+    { "file": "WEB_FRAMEWORK_SPEC.md", "path": "../../../sdkwork-specs/WEB_FRAMEWORK_SPEC.md", "purpose": "Single process Web Framework binding." }
+  ],
+  "contracts": {
+    "layerRole": "runtime-gateway",
+    "publicExports": [],
+    "requiredPorts": [
+      { "name": "applicationApiAssembly", "export": "sdkwork-api-mahjong-assembly" }
+    ],
+    "runtimeEntrypoints": ["src/main.rs"],
+    "sdkDependencies": [],
+    "dependencyApiExports": [],
+    "dependencyApiSurfaces": [],
+    "events": [],
+    "configKeys": ["MAHJONG_API_BIND"]
+  },
+  "verification": { "commands": ["cargo check -p sdkwork-api-mahjong-standalone-gateway"] }
+}

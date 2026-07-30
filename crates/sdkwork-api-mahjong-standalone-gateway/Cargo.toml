@@ -13,6 +13,8 @@ path = "src/main.rs"
 [dependencies]
 axum.workspace = true
 sdkwork-api-mahjong-assembly.workspace = true
+sdkwork-web-bootstrap.workspace = true
+sdkwork-iam-web-adapter.workspace = true
 sdkwork-utils-rust.workspace = true
 tokio.workspace = true
 tracing = "0.1"

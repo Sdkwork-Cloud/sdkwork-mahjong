@@ -5,13 +5,12 @@ use axum::http::{HeaderName, HeaderValue, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
-use sdkwork_mahjong_match_repository_sqlx::{GameMatchRepositoryBackend, InMemoryGameMatchRepository};
+use sdkwork_mahjong_match_repository_sqlx::GameMatchRepositoryBackend;
 use sdkwork_mahjong_match_service::{GameError, GameMatchQuery, GameMatchService};
-use sdkwork_iam_web_adapter::{build_web_framework_layer, IamWebRequestContextResolver};
 use sdkwork_utils_rust::{
     uuid, PageInfo, PageMode, SdkWorkApiResponse, SdkWorkPageData, SdkWorkResourceData,
 };
-use sdkwork_web_axum::{with_web_request_context, RequirePrincipal};
+use sdkwork_web_axum::RequirePrincipal;
 use sdkwork_web_core::{
     problem_response, HttpRouteManifest, ProblemCorrelation, WebFrameworkError,
     WebFrameworkErrorKind,
@@ -36,21 +35,11 @@ pub fn routes() -> Router<MahjongMatchStore> {
 }
 
 pub fn gateway_mount(store: MahjongMatchStore) -> Router {
-    let router = routes().with_state(store);
-    with_web_request_context(
-        router,
-        build_web_framework_layer(
-            IamWebRequestContextResolver::new(None),
-            HttpRouteManifest::new(MATCH_HTTP_ROUTES),
-            sdkwork_web_bootstrap::infra_public_path_prefixes(),
-        ),
-    )
+    routes().with_state(store)
 }
 
-pub fn default_match_store() -> MahjongMatchStore {
-    Arc::new(GameMatchService::new(GameMatchRepositoryBackend::Memory(
-        InMemoryGameMatchRepository::with_seed(vec![]),
-    )))
+pub fn gateway_route_manifest() -> HttpRouteManifest {
+    HttpRouteManifest::new(MATCH_HTTP_ROUTES)
 }
 
 async fn list_matches(
