@@ -36,7 +36,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "AuthToken": [],
+            "AccessToken": []
+          }
+        ]
       }
     },
     "/app/v3/api/mahjong/matches/{matchId}": {
@@ -78,7 +84,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "AuthToken": [],
+            "AccessToken": []
+          }
+        ]
       }
     }
   },

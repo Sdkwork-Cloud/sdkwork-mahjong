@@ -36,7 +36,13 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "AuthToken": [],
+            "AccessToken": []
+          }
+        ]
       }
     }
   },
