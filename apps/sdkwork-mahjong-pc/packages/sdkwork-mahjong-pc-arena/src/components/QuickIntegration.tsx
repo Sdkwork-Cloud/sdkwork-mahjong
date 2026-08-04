@@ -38,7 +38,7 @@ export const QuickIntegration: React.FC<QuickIntegrationProps> = ({
           <div className="flex items-center justify-between mb-3 relative z-10">
             <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5 font-mono"><Cpu size={12} className="text-blue-400" /> OpenClaw Agent</span>
             <button 
-              id="copy-claw-command"
+              id="copy-cloud-command"
               onClick={() => handleCopyText("npx openclaw init --game=cyber-strike")}
               className="text-xs text-blue-400 hover:text-white font-bold bg-blue-500/10 hover:bg-blue-500 px-2.5 py-1 rounded-md transition-all duration-300 opacity-0 group-hover/code:opacity-100 translate-y-1 group-hover/code:translate-y-0"
             >

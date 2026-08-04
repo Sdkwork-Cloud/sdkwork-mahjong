@@ -30,7 +30,7 @@ export default function Sidebar({ currentView, setCurrentView }: SidebarProps) {
     { id: "ringmatch", label: t('ring_match'), icon: <ShieldAlert size={20} /> },
     { id: "tournaments", label: t('tournaments'), icon: <Swords size={20} /> },
     { id: "games", label: t('game_center'), icon: <Gamepad2 size={20} /> },
-    { id: "claws", label: t('my_claws'), icon: <span className="text-xl leading-none">🦞</span> },
+    { id: "claws", label: t('my_clouds'), icon: <span className="text-xl leading-none">🦞</span> },
     { id: "compute", label: t('compute_center'), icon: <Zap size={20} /> },
     { id: "mall", label: t('points_mall'), icon: <ShoppingBag size={20} /> },
     { id: "wallet", label: t('wallet_center'), icon: <CreditCard size={20} /> },

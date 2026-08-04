@@ -28,7 +28,7 @@ export default function ClawsManager({ setCurrentView }: ClawsManagerProps) {
   const [lobsters, setLobsters] = useState<Lobster[]>([
     {
       id: "1",
-      name: "Alpha Claw",
+      name: "Alpha Cloud",
       level: 42,
       winRate: 68.5,
       matches: 124,
@@ -102,7 +102,7 @@ export default function ClawsManager({ setCurrentView }: ClawsManagerProps) {
         <div>
           <h1 className="text-4xl font-black tracking-tight text-zinc-900 dark:text-white flex items-center gap-3">
             <span className="text-4xl">??</span>
-            {t('my_claws', '????')}
+            {t('my_clouds', '????')}
           </h1>
           <p className="text-zinc-500 dark:text-zinc-400 mt-2 text-lg">
             {t('claws_desc', '????????????????????)}
@@ -113,7 +113,7 @@ export default function ClawsManager({ setCurrentView }: ClawsManagerProps) {
           className="flex items-center gap-2 px-6 py-3 bg-rose-500 hover:bg-rose-600 text-white rounded-xl font-bold transition-all shadow-lg shadow-rose-500/20 hover:scale-105 active:scale-95"
         >
           <Plus size={20} />
-          {t('create_claw', '??????)}
+          {t('create_cloud', '??????)}
         </button>
       </div>
 
@@ -190,7 +190,7 @@ export default function ClawsManager({ setCurrentView }: ClawsManagerProps) {
                 ) : (
                   <>
                     <Cpu size={18} />
-                    {t('train_claw', '?? (500 Tokens)')}
+                    {t('train_cloud', '?? (500 Tokens)')}
                   </>
                 )}
               </button>
@@ -215,7 +215,7 @@ export default function ClawsManager({ setCurrentView }: ClawsManagerProps) {
           >
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-black text-white flex items-center gap-2">
-                <span>??</span> {t('create_claw', '??????)}
+                <span>??</span> {t('create_cloud', '??????)}
               </h2>
               <button onClick={() => setIsModalOpen(false)} className="text-zinc-500 hover:text-white">
                 <Plus className="rotate-45" size={24} />
@@ -224,13 +224,13 @@ export default function ClawsManager({ setCurrentView }: ClawsManagerProps) {
             
             <div className="space-y-4 mb-8">
               <div>
-                <label className="block text-sm font-medium text-zinc-400 mb-2">{t('claw_name', '????')}</label>
+                <label className="block text-sm font-medium text-zinc-400 mb-2">{t('cloud_name', '????')}</label>
                 <input
                   type="text"
                   value={newLobsterName}
                   onChange={(e) => setNewLobsterName(e.target.value)}
                   className="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 transition-all"
-                  placeholder={t('claw_name_placeholder', '????????)}
+                  placeholder={t('cloud_name_placeholder', '????????)}
                 />
               </div>
             </div>

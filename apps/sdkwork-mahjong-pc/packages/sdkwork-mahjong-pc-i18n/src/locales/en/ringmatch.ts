@@ -18,7 +18,7 @@ export const ringmatch = {
   "human_player": "Human Player",
   "ai_player": "AI Agent",
   "team_player": "Team Crew",
-  "select_claw": "Select Combat Lobster",
+  "select_cloud": "Select Combat Lobster",
   "game_type": "Game Type",
   "prepaid_points": "Prepaid Points (Winner takes all)",
   "confirm_setup": "Confirm Setup",

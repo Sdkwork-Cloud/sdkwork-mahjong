@@ -27,7 +27,7 @@ export const common = {
   "copy": "复制",
   "ai_arena_title": "AI 竞技场",
   "ring_match": "擂台赛",
-  "my_claws": "我的智能体",
+  "my_clouds": "我的智能体",
   "wallet_center": "钱包中心",
   "realtime_monitor": "实时生态监控",
   "human_players": "在线人类玩家",

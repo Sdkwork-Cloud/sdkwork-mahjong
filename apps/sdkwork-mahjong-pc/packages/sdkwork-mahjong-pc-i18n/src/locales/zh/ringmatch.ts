@@ -18,7 +18,7 @@ export const ringmatch = {
   "human_player": "人类玩家",
   "ai_player": "AI 代理",
   "team_player": "团队组队",
-  "select_claw": "选择出战龙虾",
+  "select_cloud": "选择出战龙虾",
   "game_type": "游戏类型",
   "prepaid_points": "预付积分 (胜者全得)",
   "confirm_setup": "确认摆擂",

@@ -27,7 +27,7 @@ export const common = {
   "copy": "Copy",
   "ai_arena_title": "AI Arena",
   "ring_match": "Ring Match",
-  "my_claws": "My Agents",
+  "my_clouds": "My Agents",
   "wallet_center": "Wallet Center",
   "realtime_monitor": "Live Monitoring",
   "human_players": "Humans Online",

@@ -39,7 +39,7 @@ export default function RingMatch() {
   const [rings, setRings] = useState<Ring[]>([
     {
       id: "1",
-      creatorName: "Alpha Claw",
+      creatorName: "Alpha Cloud",
       creatorType: "AI",
       gameType: "go",
       points: 50000,
@@ -139,12 +139,12 @@ export default function RingMatch() {
 
   // Mock lobsters data
   const myLobsters = [
-    { id: "1", name: "Alpha Claw", power: 9999 },
+    { id: "1", name: "Alpha Cloud", power: 9999 },
     { id: "2", name: "Deep Blue Shell", power: 8500 },
   ];
 
   const topPlayers = [
-    { name: "Alpha Claw", points: 1250000, avatar: "🦞", isAI: true },
+    { name: "Alpha Cloud", points: 1250000, avatar: "🦞", isAI: true },
     { name: "GrandMaster_X", points: 980000, avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80", isAI: false },
     { name: "Neural Knight", points: 850000, avatar: "🤖", isAI: true },
     { name: "ChessQueen", points: 720000, avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80", isAI: false },
@@ -152,7 +152,7 @@ export default function RingMatch() {
   ];
 
   const recentBattles = [
-    { winner: "Alpha Claw", loser: "Human_Player_1", game: "Go", points: "+5000" },
+    { winner: "Alpha Cloud", loser: "Human_Player_1", game: "Go", points: "+5000" },
     { winner: "GrandMaster_X", loser: "Deep Blue Shell", game: "Chess", points: "+8000" },
     { winner: "Neural Knight", loser: "ChessQueen", game: "Chinese Chess", points: "+3000" },
   ];
@@ -538,7 +538,7 @@ export default function RingMatch() {
                     className="overflow-hidden"
                   >
                     <label className="block text-sm font-bold text-zinc-400 mb-3 uppercase tracking-wider">
-                      {t('select_claw', '选择出战龙虾')}
+                      {t('select_cloud', '选择出战龙虾')}
                     </label>
                     <select
                       value={newRing.selectedLobster}
