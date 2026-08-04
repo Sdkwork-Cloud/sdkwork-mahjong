@@ -60,7 +60,7 @@
     "sdkClients": ["sdkwork-mahjong-app-sdk", "sdkwork-mahjong-backend-sdk"],
     "events": [],
     "configKeys": [
-      "MAHJONG_DATABASE_URL",
+      "SDKWORK_DATABASE_*",
       "MAHJONG_API_BIND",
       "SDKWORK_MAHJONG_APP_ROOT"
     ]

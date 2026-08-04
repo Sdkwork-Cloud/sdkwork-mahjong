@@ -4,7 +4,7 @@ Safe checked-in examples for `sdkwork-mahjong`. Local overrides such as `.env.lo
 
 | File | Purpose |
 | --- | --- |
-| `mahjong.database.example.toml` | PostgreSQL connection template for `MAHJONG_DATABASE_*` |
+| `mahjong.database.example.toml` | PostgreSQL connection template using `SDKWORK_DATABASE_*` |
 | `topology/` | Deployment profile and service-layout env templates |
 
 See `../sdkwork-specs/CONFIG_SPEC.md` and `../sdkwork-specs/ENVIRONMENT_SPEC.md`.

@@ -43,7 +43,7 @@
     "dependencyApiSurfaces": [],
     "events": [],
     "configKeys": [
-      "MAHJONG_DATABASE_URL"
+      "SDKWORK_DATABASE_*"
     ],
     "layerRole": "runtime-composition"
   },
