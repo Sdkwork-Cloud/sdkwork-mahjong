@@ -161,7 +161,7 @@ export default function Auth({ setCurrentView }: AuthProps) {
               {/* QR Code Section (Left) */}
               <div className="hidden md:flex flex-col items-center justify-center w-1/2 p-12 bg-zinc-50/50 dark:bg-zinc-950/50 border-r border-zinc-200 dark:border-zinc-800 relative">
                 <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2">{t('scan_to_login', '扫码安全登录')}</h3>
-                <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-8 text-center">{t('scan_desc', '请使�?OpenClaw App 或微信扫码登�?)}</p>
+                <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-8 text-center">{t('scan_desc', '请使用 OpenClaw App 或微信扫码登录')}</p>
                 
                 <div className="relative p-4 bg-white rounded-2xl shadow-sm border border-zinc-200 group cursor-pointer hover:shadow-md transition-all">
                   {/* QR Code Image / SVG */}
@@ -181,7 +181,7 @@ export default function Auth({ setCurrentView }: AuthProps) {
                           <path d="M21 3v5h-5"></path>
                         </svg>
                       </div>
-                      <span className="text-white text-xs font-bold">{t('refresh_qr', '刷新二维�?)}</span>
+                      <span className="text-white text-xs font-bold">{t('refresh_qr', '刷新二维码')}</span>
                     </div>
                   </div>
                   {/* Logo in center of QR */}
@@ -322,7 +322,7 @@ export default function Auth({ setCurrentView }: AuthProps) {
                             onChange={(e) => setPassword(e.target.value)}
                             required
                             className="w-full bg-zinc-100 dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-800 text-zinc-900 dark:text-white rounded-xl py-3 pl-11 pr-4 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 transition-all placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
-                            placeholder="•••••••�?
+                            placeholder="••••••••"
                           />
                         </div>
                       </div>

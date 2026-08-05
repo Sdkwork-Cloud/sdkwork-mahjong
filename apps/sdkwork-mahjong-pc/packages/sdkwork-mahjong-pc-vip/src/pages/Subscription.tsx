@@ -24,7 +24,7 @@ export default function Subscription({ setCurrentView }: SubscriptionProps) {
       const days = billingCycle === 'monthly' ? 30 : 365;
       setVipLevel(level, days);
       setIsProcessing(null);
-      showToast(t('subscription_success', '订阅成功�?), 'success');
+      showToast(t('subscription_success', '订阅成功！'), 'success');
     }, 1500);
   };
 
@@ -193,7 +193,7 @@ export default function Subscription({ setCurrentView }: SubscriptionProps) {
               className={`w-full py-4 rounded-xl font-bold flex items-center justify-center space-x-2 transition-all mb-8 ${plan.buttonStyle}`}
             >
               {isProcessing === plan.id ? (
-                <span className="animate-pulse">{t('processing', '处理�?..')}</span>
+                <span className="animate-pulse">{t('processing', '处理中...')}</span>
               ) : (
                 <>
                   <span>{plan.buttonText}</span>

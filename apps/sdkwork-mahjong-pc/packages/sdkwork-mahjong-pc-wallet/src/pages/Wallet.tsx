@@ -58,7 +58,7 @@ export default function Wallet() {
 
   const handleDeposit = () => {
     if (points < 100) {
-      showToast(t('min_deposit', '最低充�?100 积分'), 'error');
+      showToast(t('min_deposit', '最低充值1100 积分'), 'error');
       return;
     }
 
@@ -91,7 +91,7 @@ export default function Wallet() {
       const success = deductPoints(amount, payoutMethod);
       if (success) {
         setWithdrawAmount('');
-        showToast(t('withdraw_success', '提现申请已提交，预计 24 小时内到�?), 'success');
+        showToast(t('withdraw_success', '提现申请已提交，预计 24 小时内到账'), 'success');
       }
       setIsProcessing(false);
     }, 1000);
@@ -115,7 +115,7 @@ export default function Wallet() {
             {t('manage_your_assets', '管理你的资产')}
           </h1>
           <p className="text-zinc-500 dark:text-zinc-400 text-lg max-w-2xl mx-auto font-medium">
-            {t('wallet_desc', '充值获取更多积分，或将你在游戏中赢得的积分提现�?)}
+            {t('wallet_desc', '充值获取更多积分，或将你在游戏中赢得的积分提现。')}
           </p>
         </motion.div>
       </div>
@@ -130,7 +130,7 @@ export default function Wallet() {
               <Database className="text-blue-400" size={40} />
             </div>
             <div>
-              <p className="text-sm font-bold text-zinc-400 uppercase tracking-wider mb-1">{t('total_balance', '总资�?(积分)')}</p>
+              <p className="text-sm font-bold text-zinc-400 uppercase tracking-wider mb-1">{t('total_balance', '总资产((积分)')}</p>
               <p className="text-4xl font-black text-white flex items-center">
                 {profile?.points?.toLocaleString() || 0} <span className="text-lg text-zinc-500 ml-2 font-medium">pts</span>
               </p>
@@ -177,7 +177,7 @@ export default function Wallet() {
           >
             <div className="flex items-center justify-center space-x-2">
               <ArrowDownToLine size={18} />
-              <span>{t('deposit', '充�?)}</span>
+              <span>{t('deposit', '充值')}</span>
             </div>
             {activeTab === "deposit" && (
               <motion.div layoutId="activeTab" className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500" />
@@ -225,7 +225,7 @@ export default function Wallet() {
                 className="grid grid-cols-1 lg:grid-cols-3 gap-8"
               >
                 <div className="lg:col-span-2 space-y-6">
-                  <h3 className="text-lg font-bold text-zinc-900 dark:text-white">{t('select_deposit_amount', '选择充值金�?)}</h3>
+                  <h3 className="text-lg font-bold text-zinc-900 dark:text-white">{t('select_deposit_amount', '选择充值金额')}</h3>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {depositPackages.map((pkg) => (
                       <div
@@ -247,7 +247,7 @@ export default function Wallet() {
                         <p className="text-xs font-bold text-zinc-500 mb-2">Points</p>
                         {pkg.bonus > 0 ? (
                           <div className="text-[10px] font-bold text-emerald-500 bg-emerald-500/10 px-2 py-1 rounded-full">
-                            +{pkg.bonus} {t('bonus', '赠�?)}
+                            +{pkg.bonus} {t('bonus', '赠送')}
                           </div>
                         ) : (
                           <div className="h-5"></div>
@@ -258,14 +258,14 @@ export default function Wallet() {
 
                   <div className="mt-6">
                     <label className="block text-sm font-bold text-zinc-700 dark:text-zinc-300 mb-2">
-                      {t('custom_deposit', '自定义充值数�?(积分)')}
+                      {t('custom_deposit', '自定义充值数量((积分)')}
                     </label>
                     <div className="relative">
                       <input
                         type="text"
                         value={customDeposit}
                         onChange={handleCustomDepositChange}
-                        placeholder={t('min_deposit_100', '最�?100 积分起充')}
+                        placeholder={t('min_deposit_100', '最低1100 积分起充')}
                         className={`w-full bg-zinc-100 dark:bg-zinc-950 border-2 rounded-2xl px-4 py-4 text-lg font-bold text-zinc-900 dark:text-white outline-none transition-all ${
                           !depositAmount && customDeposit ? "border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.1)]" : "border-transparent focus:border-zinc-300 dark:focus:border-zinc-700"
                         }`}
@@ -287,7 +287,7 @@ export default function Wallet() {
                     </div>
                     {bonus > 0 && (
                       <div className="flex justify-between text-sm">
-                        <span className="text-emerald-500">{t('bonus_points', '额外赠�?)}</span>
+                        <span className="text-emerald-500">{t('bonus_points', '额外赠送')}</span>
                         <span className="font-bold text-emerald-500">+{bonus.toLocaleString()}</span>
                       </div>
                     )}
@@ -321,7 +321,7 @@ export default function Wallet() {
                     }`}
                   >
                     {isProcessing ? (
-                      <span className="animate-pulse">{t('processing', '处理�?..')}</span>
+                      <span className="animate-pulse">{t('processing', '处理中...')}</span>
                     ) : (
                       <>
                         <CreditCard size={20} />
@@ -350,7 +350,7 @@ export default function Wallet() {
                       {t('bind_account_title', '绑定提现账户')}
                     </h3>
                     <p className="text-zinc-500 max-w-md mx-auto">
-                      {t('bind_account_desc', '为了保障您的资金安全，请先绑定您的实名提现账户�?)}
+                      {t('bind_account_desc', '为了保障您的资金安全，请先绑定您的实名提现账户。')}
                     </p>
                     <button
                       onClick={() => setIsAccountBound(true)}
@@ -374,7 +374,7 @@ export default function Wallet() {
                           type="text"
                           value={withdrawAmount}
                           onChange={(e) => setWithdrawAmount(e.target.value.replace(/\D/g, ''))}
-                          placeholder={t('min_withdraw_placeholder', '最�?1000 积分起提')}
+                          placeholder={t('min_withdraw_placeholder', '最高11000 积分起提')}
                           className="w-full pl-12 pr-24 py-4 bg-zinc-100 dark:bg-zinc-950 border-2 border-transparent focus:border-emerald-500 rounded-2xl font-bold text-xl text-zinc-900 dark:text-white outline-none transition-all"
                         />
                         <div className="absolute inset-y-0 right-0 pr-4 flex items-center">
@@ -408,7 +408,7 @@ export default function Wallet() {
                           }`}
                         >
                           <Smartphone size={20} />
-                          <span className="font-bold">支付�?/span>
+                          <span className="font-bold">支付宝</span>
                         </button>
                         <button
                           onClick={() => setPayoutMethod("wechat")}
@@ -426,7 +426,7 @@ export default function Wallet() {
                           }`}
                         >
                           <Banknote size={20} />
-                          <span className="font-bold">银行�?/span>
+                          <span className="font-bold">银行卡</span>
                         </button>
                       </div>
                     </div>
@@ -435,11 +435,11 @@ export default function Wallet() {
                       <div className="flex items-start space-x-3">
                         <AlertCircle size={20} className="shrink-0 mt-0.5" />
                         <div>
-                          <p className="font-bold mb-2">{t('withdraw_notice_title', '提现须知�?)}</p>
+                          <p className="font-bold mb-2">{t('withdraw_notice_title', '提现须知。')}</p>
                           <ul className="list-disc pl-5 space-y-1.5 opacity-90">
-                            <li>{t('withdraw_notice_1', '提现申请将在 24 小时内审核处理�?)}</li>
-                            <li>{t('withdraw_notice_2', '提现将收�?5% 的手续费�?)}</li>
-                            <li>{t('withdraw_notice_3', '请确保您已绑定有效的收款账户�?)}</li>
+                            <li>{t('withdraw_notice_1', '提现申请将在 24 小时内审核处理。')}</li>
+                            <li>{t('withdraw_notice_2', '提现将收取55% 的手续费。')}</li>
+                            <li>{t('withdraw_notice_3', '请确保您已绑定有效的收款账户。')}</li>
                           </ul>
                         </div>
                       </div>
@@ -455,7 +455,7 @@ export default function Wallet() {
                       }`}
                     >
                       {isProcessing ? (
-                        <span className="animate-pulse">{t('processing', '处理�?..')}</span>
+                        <span className="animate-pulse">{t('processing', '处理中...')}</span>
                       ) : (
                         <>
                           <ArrowUpFromLine size={20} />
@@ -495,7 +495,7 @@ export default function Wallet() {
                         </div>
                         <div>
                           <p className="font-bold text-zinc-900 dark:text-white capitalize">
-                            {txn.type === 'deposit' ? t('deposit', '充�?) : 
+                            {txn.type === 'deposit' ? t('deposit', '充值') : 
                              txn.type === 'withdraw' ? t('withdraw', '提现') : 
                              t('exchange', '兑换')}
                           </p>
@@ -517,7 +517,7 @@ export default function Wallet() {
                           ) : (
                             <>
                               <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-                              <span className="text-xs text-amber-500 font-medium">{t('processing', '处理�?)}</span>
+                              <span className="text-xs text-amber-500 font-medium">{t('processing', '处理中...')}</span>
                             </>
                           )}
                         </div>

@@ -11,21 +11,12 @@
     "strict": true,
     "skipLibCheck": true,
     "noEmit": true,
-    "ignoreDeprecations": "6.0",
-    "baseUrl": ".",
-    "paths": {
-      "@sdkwork/utils": [
-        "../sdkwork-utils/packages/sdkwork-utils-typescript/src/index.ts"
-      ],
-      "@sdkwork/mahjong-contracts": [
-        "apps/sdkwork-mahjong-common/packages/sdkwork-mahjong-contracts/src/index.ts"
-      ]
-    }
+    "jsx": "react-jsx",
+    "allowImportingTsExtensions": true
   },
   "include": [
-    "scripts/**/*.mjs",
-    "tools/**/*.mjs",
-    "packages/**/*.ts",
-    "sdks/test/**/*.mjs"
+    "apps/**/*.ts",
+    "apps/**/*.tsx",
+    "scripts/**/*.ts"
   ]
 }

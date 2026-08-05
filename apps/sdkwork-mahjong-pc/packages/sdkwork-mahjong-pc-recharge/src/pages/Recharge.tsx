@@ -30,7 +30,7 @@ export default function Recharge() {
         addPoints(opt.points + opt.bonus);
         setSelectedAmount(null);
         setIsRecharging(false);
-        alert(t('recharge_success', '充值成�?));
+        alert(t('recharge_success', '充值成功'));
       }, 1000);
     } else {
       const amount = parseInt(withdrawAmount);
@@ -52,7 +52,7 @@ export default function Recharge() {
         const success = deductPoints(amount);
         if (success) {
           setWithdrawAmount("");
-          alert(t('withdraw_success', '提现申请已提交，预计 24 小时内到�?));
+          alert(t('withdraw_success', '提现申请已提交，预计 24 小时内到账'));
         }
         setIsRecharging(false);
       }, 1000);
@@ -77,7 +77,7 @@ export default function Recharge() {
             {t('manage_your_assets', '管理你的资产')}
           </h1>
           <p className="text-zinc-500 dark:text-zinc-400 text-lg max-w-2xl mx-auto font-medium">
-            {t('wallet_desc', '充值获取更多积分，或将你在游戏中赢得的积分提现�?)}
+            {t('wallet_desc', '充值获取更多积分，或将你在游戏中赢得的积分提现。')}
           </p>
         </motion.div>
       </div>
@@ -117,7 +117,7 @@ export default function Recharge() {
         <div className="flex flex-col sm:flex-row items-center justify-between mb-6 gap-4">
           <h2 className="text-2xl font-black text-zinc-900 dark:text-white flex items-center">
             {mode === "recharge" ? <ArrowDownToLine className="mr-2 text-blue-500" /> : <ArrowUpFromLine className="mr-2 text-emerald-500" />}
-            {mode === "recharge" ? t('select_amount', '选择充值金�?) : t('withdraw_points', '积分提现')}
+            {mode === "recharge" ? t('select_amount', '选择充值金额') : t('withdraw_points', '积分提现')}
           </h2>
           <div className="flex bg-zinc-200 dark:bg-zinc-800 p-1 rounded-xl">
             <button
@@ -128,7 +128,7 @@ export default function Recharge() {
                   : "text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300"
               }`}
             >
-              {t('recharge', '充�?)}
+              {t('recharge', '充值')}
             </button>
             <button
               onClick={() => { setMode("withdraw"); setSelectedAmount(null); }}
@@ -171,7 +171,7 @@ export default function Recharge() {
                 
                 {opt.bonus > 0 && (
                   <div className="text-xs font-bold text-emerald-500 bg-emerald-500/10 px-3 py-1 rounded-full mb-4">
-                    +{opt.bonus} {t('bonus', '赠�?)}
+                    +{opt.bonus} {t('bonus', '赠送')}
                   </div>
                 )}
                 
@@ -201,7 +201,7 @@ export default function Recharge() {
                   type="number"
                   value={withdrawAmount}
                   onChange={(e) => setWithdrawAmount(e.target.value)}
-                  placeholder={t('min_withdraw_placeholder', '最�?1000 积分起提')}
+                  placeholder={t('min_withdraw_placeholder', '最高11000 积分起提')}
                   className="w-full pl-12 pr-4 py-4 bg-zinc-100 dark:bg-zinc-800 border-2 border-transparent focus:border-emerald-500 rounded-2xl font-bold text-xl text-zinc-900 dark:text-white outline-none transition-all"
                 />
                 <div className="absolute inset-y-0 right-0 pr-4 flex items-center">
@@ -220,11 +220,11 @@ export default function Recharge() {
             </div>
             
             <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4 text-sm text-amber-600 dark:text-amber-400">
-              <p className="font-bold mb-1">{t('withdraw_notice_title', '提现须知�?)}</p>
+              <p className="font-bold mb-1">{t('withdraw_notice_title', '提现须知。')}</p>
               <ul className="list-disc pl-5 space-y-1">
-                <li>{t('withdraw_notice_1', '提现申请将在 24 小时内审核处理�?)}</li>
-                <li>{t('withdraw_notice_2', '提现将收�?5% 的手续费�?)}</li>
-                <li>{t('withdraw_notice_3', '请确保您已绑定有效的收款账户�?)}</li>
+                <li>{t('withdraw_notice_1', '提现申请将在 24 小时内审核处理。')}</li>
+                <li>{t('withdraw_notice_2', '提现将收取55% 的手续费。')}</li>
+                <li>{t('withdraw_notice_3', '请确保您已绑定有效的收款账户。')}</li>
               </ul>
             </div>
           </motion.div>
@@ -247,7 +247,7 @@ export default function Recharge() {
             ) : (
               <ArrowUpFromLine size={24} className={isRecharging ? "animate-pulse" : ""} />
             )}
-            <span>{isRecharging ? t('processing', '处理�?..') : (mode === "recharge" ? t('pay_now', '立即支付') : t('confirm_withdraw', '确认提现'))}</span>
+            <span>{isRecharging ? t('processing', '处理中...') : (mode === "recharge" ? t('pay_now', '立即支付') : t('confirm_withdraw', '确认提现'))}</span>
             <ArrowRight size={20} />
           </button>
         </div>

@@ -79,7 +79,7 @@ export default function RingMatch() {
       gameType: "texas_holdem",
       points: 100000,
       status: "waiting",
-      avatar: "🛡�?,
+      avatar: "🛡️",
       winRate: "65.0%",
       streak: 5,
       teamSize: 4,
@@ -178,7 +178,7 @@ export default function RingMatch() {
       status: "waiting",
       avatar: isAI 
         ? "🦞"
-        : newRing.creatorType === "Team" ? "🛡�? : "https://images.unsplash.com/photo-1527980975255-d3b416303d12?w=100&q=80",
+        : newRing.creatorType === "Team" ? "🛡️" : "https://images.unsplash.com/photo-1527980975255-d3b416303d12?w=100&q=80",
       power: isAI ? lobster?.power : undefined,
       winRate: "0.0%",
       streak: 0,
@@ -206,12 +206,12 @@ export default function RingMatch() {
         if (won) {
           addPoints(ring.points * 2); // Get back own points + ring points
           addExp(200);
-          showToast(t('challenge_won', `挑战成功！你赢得�?${ring.points} 积分！`), 'success');
+          showToast(t('challenge_won', `挑战成功！你赢得了${ring.points} 积分！`), 'success');
           // Remove ring if won
           setRings(rings.filter(r => r.id !== ring.id));
         } else {
           addExp(50);
-          showToast(t('challenge_lost', `挑战失败，你失去�?${ring.points} 积分。`), 'error');
+          showToast(t('challenge_lost', `挑战失败，你失去了${ring.points} 积分。`), 'error');
         }
       }
       setChallengingRing(null);
@@ -232,10 +232,10 @@ export default function RingMatch() {
             <div>
               <h1 className="text-4xl md:text-5xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-orange-500 to-amber-500 flex items-center gap-4 drop-shadow-sm">
                 <Swords className="text-rose-500" size={48} />
-                {t('ring_match', '巅峰擂台�?)}
+                {t('ring_match', '巅峰擂台！')}
               </h1>
               <p className="text-zinc-400 mt-4 text-lg font-medium max-w-xl leading-relaxed">
-                {t('ring_match_desc', '全网顶尖AI与人类高手汇聚于此。摆下擂台，接受全服挑战；或者主动出击，赢取海量赏金与无上荣耀�?)}
+                {t('ring_match_desc', '全网顶尖AI与人类高手汇聚于此。摆下擂台，接受全服挑战；或者主动出击，赢取海量赏金与无上荣耀！')}
               </p>
             </div>
             <button
@@ -251,21 +251,21 @@ export default function RingMatch() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4">
             <h2 className="text-2xl font-black text-white flex items-center gap-2">
               <Flame className="text-orange-500" size={24} />
-              {t('active_rings', '火热打擂�?)}
+              {t('active_rings', '火热打擂中')}
             </h2>
             <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
               <input 
                 type="text" 
-                placeholder={t('search_rings_placeholder', '搜索擂主或游�?..')} 
+                placeholder={t('search_rings_placeholder', '搜索擂主或游戏...')} 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="bg-zinc-900/80 border border-zinc-800 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-rose-500 transition-colors w-full sm:w-48"
               />
               <div className="flex gap-2 overflow-x-auto pb-1 sm:pb-0 hide-scrollbar">
                 <span onClick={() => setFilter("all")} className={`px-4 py-2 rounded-xl text-xs font-bold cursor-pointer whitespace-nowrap transition-colors ${filter === "all" ? "bg-rose-500 text-white" : "bg-zinc-800 text-zinc-300 hover:bg-zinc-700"}`}>{t('all', '全部')}</span>
-                <span onClick={() => setFilter("high_reward")} className={`px-4 py-2 rounded-xl text-xs font-bold cursor-pointer whitespace-nowrap transition-colors ${filter === "high_reward" ? "bg-orange-500 text-white" : "bg-zinc-800 text-zinc-300 hover:bg-zinc-700"}`}>{t('high_reward', '高赏�?)}</span>
+                <span onClick={() => setFilter("high_reward")} className={`px-4 py-2 rounded-xl text-xs font-bold cursor-pointer whitespace-nowrap transition-colors ${filter === "high_reward" ? "bg-orange-500 text-white" : "bg-zinc-800 text-zinc-300 hover:bg-zinc-700"}`}>{t('high_reward', '高赏金')}</span>
                 <span onClick={() => setFilter("ai_only")} className={`px-4 py-2 rounded-xl text-xs font-bold cursor-pointer whitespace-nowrap transition-colors ${filter === "ai_only" ? "bg-purple-500 text-white" : "bg-zinc-800 text-zinc-300 hover:bg-zinc-700"}`}>{t('ai_only', 'AI擂主')}</span>
-                <span onClick={() => setFilter("team")} className={`px-4 py-2 rounded-xl text-xs font-bold cursor-pointer whitespace-nowrap transition-colors ${filter === "team" ? "bg-blue-500 text-white" : "bg-zinc-800 text-zinc-300 hover:bg-zinc-700"}`}>{t('team', '团队�?)}</span>
+                <span onClick={() => setFilter("team")} className={`px-4 py-2 rounded-xl text-xs font-bold cursor-pointer whitespace-nowrap transition-colors ${filter === "team" ? "bg-blue-500 text-white" : "bg-zinc-800 text-zinc-300 hover:bg-zinc-700"}`}>{t('team', '团队赛')}</span>
               </div>
             </div>
           </div>
@@ -273,7 +273,7 @@ export default function RingMatch() {
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 pb-8">
             {filteredRings.length === 0 ? (
               <div className="col-span-full py-20 text-center text-zinc-500 font-bold">
-                {t('no_matching_rings', '没有找到匹配的擂台，自己摆一个吧�?)}
+                {t('no_matching_rings', '没有找到匹配的擂台，自己摆一个吧！')}
               </div>
             ) : filteredRings.map((ring) => (
               <motion.div
@@ -340,7 +340,7 @@ export default function RingMatch() {
                   <div className="mt-auto">
                     <div className="bg-zinc-950/50 rounded-2xl p-4 mb-4 border border-zinc-800/50 flex items-center justify-between">
                       <span className="text-sm font-bold text-zinc-500 uppercase tracking-wider flex items-center gap-1">
-                        <Star size={14} className="text-zinc-600" /> {t('reward_pool', '赏金�?)}
+                        <Star size={14} className="text-zinc-600" /> {t('reward_pool', '赏金池')}
                       </span>
                       <div className="flex items-center gap-2 text-amber-400 font-black text-2xl drop-shadow-[0_0_10px_rgba(251,191,36,0.3)]">
                         <Coins size={24} />
@@ -367,7 +367,7 @@ export default function RingMatch() {
                           }`}
                         >
                           {challengingRing === ring.id ? (
-                            <span className="animate-pulse">{t('battling', '战斗�?..')}</span>
+                            <span className="animate-pulse">{t('battling', '战斗中...')}</span>
                           ) : (
                             <>
                               <ShieldAlert size={20} />
@@ -393,7 +393,7 @@ export default function RingMatch() {
             
             <h3 className="text-xl font-black text-white mb-6 flex items-center gap-2">
               <Crown className="text-amber-500" size={24} />
-              {t('ring_leaderboard', '擂台风云�?)}
+              {t('ring_leaderboard', '擂台风云榜')}
             </h3>
             
             <div className="space-y-4">
@@ -439,7 +439,7 @@ export default function RingMatch() {
             
             <h3 className="text-xl font-black text-white mb-6 flex items-center gap-2">
               <History className="text-rose-500" size={24} />
-              {t('recent_battles', '最新战�?)}
+              {t('recent_battles', '最新战报')}
             </h3>
             
             <div className="space-y-4">
@@ -568,10 +568,10 @@ export default function RingMatch() {
                       onChange={(e) => setNewRing({ ...newRing, teamSize: parseInt(e.target.value) })}
                       className="w-full bg-zinc-950 border-2 border-zinc-800 rounded-2xl px-4 py-4 text-white font-bold focus:outline-none focus:border-rose-500 transition-colors appearance-none"
                     >
-                      <option value="2">{t('two_players_team', '2 人小�?)}</option>
-                      <option value="3">{t('three_players_team', '3 人小�?)}</option>
-                      <option value="4">{t('four_players_team', '4 人小�?)}</option>
-                      <option value="5">{t('five_players_team', '5 人小�?)}</option>
+                      <option value="2">{t('two_players_team', '2 人小队')}</option>
+                      <option value="3">{t('three_players_team', '3 人小队')}</option>
+                      <option value="4">{t('four_players_team', '4 人小队')}</option>
+                      <option value="5">{t('five_players_team', '5 人小队')}</option>
                     </select>
                   </motion.div>
                 )}
@@ -593,7 +593,7 @@ export default function RingMatch() {
 
                 <div>
                   <label className="block text-sm font-bold text-zinc-400 mb-3 uppercase tracking-wider">
-                    {t('prepaid_points', '预付积分 (胜者全�?')}
+                    {t('prepaid_points', '预付积分 (胜者全拿')}
                   </label>
                   <div className="relative">
                     <Coins className="absolute left-5 top-1/2 -translate-y-1/2 text-amber-500" size={24} />

@@ -69,7 +69,7 @@ export default function ComputeCenter() {
           const success = deductPoints(pointsCost);
           if (success) {
             addComputeTokens(totalTokens);
-            showToast(t('exchange_success', '兑换成功�?), 'success');
+            showToast(t('exchange_success', '兑换成功！'), 'success');
           }
           setIsProcessing(false);
         }, 800);
@@ -80,7 +80,7 @@ export default function ComputeCenter() {
       setIsProcessing(true);
       setTimeout(() => {
         addComputeTokens(totalTokens);
-        showToast(t('purchase_success', '购买成功�?), 'success');
+        showToast(t('purchase_success', '购买成功！'), 'success');
         setIsProcessing(false);
       }, 800);
     }
@@ -102,10 +102,10 @@ export default function ComputeCenter() {
             <span>{t('compute_center', '算力中心')}</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tight mb-4">
-            {t('drive_your_agents', '驱动你的智能�?)}
+            {t('drive_your_agents', '驱动你的智能体')}
           </h1>
           <p className="text-zinc-500 dark:text-zinc-400 text-lg max-w-2xl mx-auto font-medium">
-            {t('compute_desc', '使用积分兑换或直接购买算�?(Token)，为你的龙虾 (Agent) 提供持续的思考能力�?)}
+            {t('compute_desc', '使用积分兑换或直接购买算力((Token)，为你的龙虾 (Agent) 提供持续的思考能力。')}
           </p>
         </motion.div>
       </div>
@@ -148,7 +148,7 @@ export default function ComputeCenter() {
         <div className="lg:col-span-2 space-y-6">
           <h2 className="text-2xl font-black text-zinc-900 dark:text-white flex items-center">
             <Server className="mr-2 text-emerald-500" />
-            {t('select_amount', '选择充值数�?)}
+            {t('select_amount', '选择充值数量')}
           </h2>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -174,7 +174,7 @@ export default function ComputeCenter() {
                 <p className="text-xs font-bold text-zinc-500 mb-2">Tokens</p>
                 {pkg.bonus > 0 ? (
                   <div className="text-[10px] font-bold text-emerald-500 bg-emerald-500/10 px-2 py-1 rounded-full">
-                    +{(pkg.bonus / 1000)}K {t('bonus', '赠�?)}
+                    +{(pkg.bonus / 1000)}K {t('bonus', '赠送')}
                   </div>
                 ) : (
                   <div className="h-5"></div>
@@ -186,7 +186,7 @@ export default function ComputeCenter() {
           <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md p-6 rounded-3xl border border-zinc-200 dark:border-zinc-800 shadow-sm">
             <label className="flex items-center text-sm font-bold text-zinc-700 dark:text-zinc-300 mb-3">
               <Calculator size={16} className="mr-2 text-zinc-400" />
-              {t('custom_amount', '自定义数�?)}
+              {t('custom_amount', '自定义数量')}
             </label>
             <div className="relative">
               <input
@@ -203,7 +203,7 @@ export default function ComputeCenter() {
               </div>
             </div>
             <p className="text-xs text-zinc-500 mt-3 font-medium">
-              {t('custom_amount_hint', '自定义数量不享受额外赠送，最�?100 Tokens 起充�?)}
+              {t('custom_amount_hint', '自定义数量不享受额外赠送，最低1100 Tokens 起充！')}
             </p>
           </div>
         </div>
@@ -252,7 +252,7 @@ export default function ComputeCenter() {
                 </div>
                 <div className="text-left">
                   <p className="font-bold text-zinc-900 dark:text-white">{t('direct_purchase', '直接购买')}</p>
-                  <p className="text-xs text-zinc-500">{t('support_wechat_alipay', '支持微信/支付�?)}</p>
+                  <p className="text-xs text-zinc-500">{t('support_wechat_alipay', '支持微信/支付宝')}</p>
                 </div>
               </div>
               <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${paymentMethod === "fiat" ? "border-blue-500" : "border-zinc-300 dark:border-zinc-700"}`}>
@@ -273,7 +273,7 @@ export default function ComputeCenter() {
               </div>
               {bonus > 0 && (
                 <div className="flex justify-between text-sm">
-                  <span className="text-emerald-400">{t('bonus_tokens', '额外赠�?)}</span>
+                  <span className="text-emerald-400">{t('bonus_tokens', '额外赠送')}</span>
                   <span className="font-bold text-emerald-400">+{bonus.toLocaleString()}</span>
                 </div>
               )}
@@ -305,7 +305,7 @@ export default function ComputeCenter() {
             </div>
 
             <button 
-              disabled={tokens < 100 || isProcessing || (paymentMethod === "points" && profile && profile.points < pointsCost)}
+              disabled={tokens < 100 || isProcessing || (paymentMethod === "points" && (profile?.points ?? 0) < pointsCost)}
               onClick={handleExchange}
               className={`w-full flex items-center justify-center space-x-2 py-4 rounded-2xl font-black text-lg transition-all ${
                 tokens >= 100 && !isProcessing && (paymentMethod === "fiat" || (profile && profile.points >= pointsCost))
@@ -314,7 +314,7 @@ export default function ComputeCenter() {
               }`}
             >
               {isProcessing ? (
-                <span className="animate-pulse">{t('processing', '处理�?..')}</span>
+                <span className="animate-pulse">{t('processing', '处理中...')}</span>
               ) : (
                 <>
                   <span>{paymentMethod === "points" ? t('confirm_exchange', '确认兑换') : t('confirm_purchase', '确认购买')}</span>
@@ -325,7 +325,7 @@ export default function ComputeCenter() {
             
             {paymentMethod === "points" && profile && profile.points < pointsCost && tokens >= 100 && (
               <p className="text-rose-500 text-xs text-center mt-3 font-bold">
-                {t('insufficient_points_hint', '积分余额不足，请调整数量或更换支付方�?)}
+                {t('insufficient_points_hint', '积分余额不足，请调整数量或更换支付方式')}
               </p>
             )}
           </div>

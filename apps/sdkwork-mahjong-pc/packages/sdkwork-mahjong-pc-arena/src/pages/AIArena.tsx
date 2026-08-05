@@ -247,7 +247,7 @@ export default function AIArena() {
           <QuickIntegration 
             onCopy={(str) => {
               navigator.clipboard.writeText(str);
-              showToast(t('copy') + " " + t('success_msg', '成功�?), 'success');
+              showToast(t('copy') + " " + t('success_msg', '成功！'), 'success');
             }}
             onViewDocs={() => showToast(t('view_full_docs'), 'info')}
           />

@@ -71,7 +71,7 @@ export default function ClawsManager({ setCurrentView }: ClawsManagerProps) {
 
   const handleTrain = (id: string) => {
     if (!profile || profile.computeTokens < 500) {
-      showToast(t('insufficient_compute', '??????????500 Tokens'), 'error');
+      showToast(t('insufficient_compute', '计算力不足，请先充值 500 Tokens'), 'error');
       return;
     }
 
@@ -89,7 +89,7 @@ export default function ClawsManager({ setCurrentView }: ClawsManagerProps) {
           }
           return l;
         }));
-        showToast(t('train_success', '??????????'), 'success');
+        showToast(t('train_success', '训练成功，战力提升！'), 'success');
       }
       setTrainingLobster(null);
     }, 1500);
@@ -101,11 +101,11 @@ export default function ClawsManager({ setCurrentView }: ClawsManagerProps) {
       <div className="flex justify-between items-center mb-8">
         <div>
           <h1 className="text-4xl font-black tracking-tight text-zinc-900 dark:text-white flex items-center gap-3">
-            <span className="text-4xl">??</span>
-            {t('my_clouds', '????')}
+            <span className="text-4xl">🦞</span>
+            {t('my_clouds', '我的智能体')}
           </h1>
           <p className="text-zinc-500 dark:text-zinc-400 mt-2 text-lg">
-            {t('claws_desc', '????????????????????)}
+            {t('claws_desc', '训练和管理专属智能体，自动攻击防守对战！')}
           </p>
         </div>
         <button
@@ -113,7 +113,7 @@ export default function ClawsManager({ setCurrentView }: ClawsManagerProps) {
           className="flex items-center gap-2 px-6 py-3 bg-rose-500 hover:bg-rose-600 text-white rounded-xl font-bold transition-all shadow-lg shadow-rose-500/20 hover:scale-105 active:scale-95"
         >
           <Plus size={20} />
-          {t('create_cloud', '??????)}
+          {t('create_cloud', '创建新智能体')}
         </button>
       </div>
 
@@ -130,7 +130,7 @@ export default function ClawsManager({ setCurrentView }: ClawsManagerProps) {
             <div className="flex justify-between items-start mb-6">
               <div className="flex items-center gap-4">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-rose-500 to-orange-500 flex items-center justify-center text-3xl shadow-lg shadow-rose-500/30">
-                  ??
+                  🦞
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">{lobster.name}</h3>
@@ -143,9 +143,9 @@ export default function ClawsManager({ setCurrentView }: ClawsManagerProps) {
                       lobster.status === 'defending' ? 'bg-rose-500/20 text-rose-400 border border-rose-500/30' :
                       'bg-blue-500/20 text-blue-400 border border-blue-500/30'
                     }`}>
-                      {lobster.status === 'idle' ? t('status_idle', '????) : 
-                       lobster.status === 'defending' ? t('status_defending', '????) : 
-                       t('status_training', '????)}
+                      {lobster.status === 'idle' ? t('status_idle', '空闲中') : 
+                       lobster.status === 'defending' ? t('status_defending', '防守中') : 
+                       t('status_training', '训练中')}
                     </span>
                   </div>
                 </div>
@@ -162,14 +162,14 @@ export default function ClawsManager({ setCurrentView }: ClawsManagerProps) {
               <div className="bg-zinc-800/50 rounded-2xl p-4 border border-zinc-700/50">
                 <div className="flex items-center gap-2 text-zinc-400 mb-1">
                   <Activity size={14} />
-                  <span className="text-xs font-medium uppercase tracking-wider">{t('win_rate', '??')}</span>
+                  <span className="text-xs font-medium uppercase tracking-wider">{t('win_rate', '胜率')}</span>
                 </div>
                 <div className="text-2xl font-black text-white">{lobster.winRate}%</div>
               </div>
               <div className="bg-zinc-800/50 rounded-2xl p-4 border border-zinc-700/50">
                 <div className="flex items-center gap-2 text-zinc-400 mb-1">
                   <Zap size={14} />
-                  <span className="text-xs font-medium uppercase tracking-wider">{t('power', '??')}</span>
+                  <span className="text-xs font-medium uppercase tracking-wider">{t('power', '战力')}</span>
                 </div>
                 <div className="text-2xl font-black text-rose-400">{lobster.power}</div>
               </div>
@@ -186,11 +186,11 @@ export default function ClawsManager({ setCurrentView }: ClawsManagerProps) {
                 }`}
               >
                 {trainingLobster === lobster.id ? (
-                  <span className="animate-pulse">{t('training', '????..')}</span>
+                  <span className="animate-pulse">{t('training', '训练中...')}</span>
                 ) : (
                   <>
                     <Cpu size={18} />
-                    {t('train_cloud', '?? (500 Tokens)')}
+                    {t('train_cloud', '训练 (500 Tokens)')}
                   </>
                 )}
               </button>
@@ -199,7 +199,7 @@ export default function ClawsManager({ setCurrentView }: ClawsManagerProps) {
                 className="flex-1 py-3 bg-rose-500 hover:bg-rose-600 text-white rounded-xl font-semibold transition-colors flex items-center justify-center gap-2 shadow-lg shadow-rose-500/20"
               >
                 <ShieldAlert size={18} />
-                {t('go_defend', '????)}
+                {t('go_defend', '去防守')}
               </button>
             </div>
           </motion.div>
@@ -215,7 +215,7 @@ export default function ClawsManager({ setCurrentView }: ClawsManagerProps) {
           >
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-black text-white flex items-center gap-2">
-                <span>??</span> {t('create_cloud', '??????)}
+                <span>🦞</span> {t('create_cloud', '创建新智能体')}
               </h2>
               <button onClick={() => setIsModalOpen(false)} className="text-zinc-500 hover:text-white">
                 <Plus className="rotate-45" size={24} />
@@ -224,13 +224,13 @@ export default function ClawsManager({ setCurrentView }: ClawsManagerProps) {
             
             <div className="space-y-4 mb-8">
               <div>
-                <label className="block text-sm font-medium text-zinc-400 mb-2">{t('cloud_name', '????')}</label>
+                <label className="block text-sm font-medium text-zinc-400 mb-2">{t('cloud_name', '智能体名称')}</label>
                 <input
                   type="text"
                   value={newLobsterName}
                   onChange={(e) => setNewLobsterName(e.target.value)}
                   className="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 transition-all"
-                  placeholder={t('cloud_name_placeholder', '????????)}
+                  placeholder={t('cloud_name_placeholder', '输入名称')}
                 />
               </div>
             </div>
@@ -240,14 +240,14 @@ export default function ClawsManager({ setCurrentView }: ClawsManagerProps) {
                 onClick={() => setIsModalOpen(false)}
                 className="flex-1 py-3 px-4 bg-zinc-800 hover:bg-zinc-700 text-white rounded-xl font-semibold transition-colors"
               >
-                {t('cancel', '??')}
+                {t('cancel', '取消')}
               </button>
               <button
                 onClick={handleCreateLobster}
                 disabled={isBlank(newLobsterName)}
                 className="flex-1 py-3 px-4 bg-rose-500 hover:bg-rose-600 disabled:opacity-50 disabled:hover:bg-rose-500 text-white rounded-xl font-bold transition-colors shadow-lg shadow-rose-500/20"
               >
-                {t('confirm_create', '????')}
+                {t('confirm_create', '确认创建')}
               </button>
             </div>
           </motion.div>

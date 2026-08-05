@@ -92,7 +92,7 @@ export default function Topbar({ setCurrentView }: TopbarProps) {
           onClick={toggleLanguage}
           className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors text-sm font-bold"
         >
-          {language === 'zh' ? 'EN' : '�?}
+          {language === 'zh' ? 'EN' : '文'}
         </button>
         <button 
           onClick={cycleTheme}

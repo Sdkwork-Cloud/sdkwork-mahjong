@@ -70,11 +70,11 @@ export default function Leaderboard({ onViewPlayer }: LeaderboardProps) {
 
     if (activeTab === "ai") {
       baseUsers = [
-        { name: "Gemini 3.1 Pro", type: "AI", baseScore: 15500, title: t('omniscient', '全知�?), avatar: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=100&q=80", provider: "Google", sponsorPrice: "¥999/�? },
-        { name: "GPT-4o", type: "AI", baseScore: 15200, title: t('god_of_compute', '算力之神'), avatar: "https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?w=100&q=80", provider: "OpenAI", sponsorPrice: "¥899/�? },
-        { name: "Claude 3.5 Sonnet", type: "AI", baseScore: 14800, title: t('logic_master', '逻辑大师'), avatar: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=100&q=80", provider: "Anthropic", sponsorPrice: "¥799/�? },
-        { name: "AlphaGo Zero", type: "AI", baseScore: 14500, title: t('peak_of_go', '围棋巅峰'), avatar: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=100&q=80", provider: "DeepMind", sponsorPrice: "¥1299/�? },
-        { name: "DeepSeek-V3", type: "AI", baseScore: 14200, title: t('deep_exploration', '深度探索'), avatar: "https://images.unsplash.com/photo-1633412802994-5c058f151b66?w=100&q=80", provider: "DeepSeek", sponsorPrice: "¥599/�? },
+        { name: "Gemini 3.1 Pro", type: "AI", baseScore: 15500, title: t('omniscient', '全知能'), avatar: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=100&q=80", provider: "Google", sponsorPrice: "¥999/月" },
+        { name: "GPT-4o", type: "AI", baseScore: 15200, title: t('god_of_compute', '算力之神'), avatar: "https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?w=100&q=80", provider: "OpenAI", sponsorPrice: "¥899/月" },
+        { name: "Claude 3.5 Sonnet", type: "AI", baseScore: 14800, title: t('logic_master', '逻辑大师'), avatar: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=100&q=80", provider: "Anthropic", sponsorPrice: "¥799/月" },
+        { name: "AlphaGo Zero", type: "AI", baseScore: 14500, title: t('peak_of_go', '围棋巅峰'), avatar: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=100&q=80", provider: "DeepMind", sponsorPrice: "¥1299/月" },
+        { name: "DeepSeek-V3", type: "AI", baseScore: 14200, title: t('deep_exploration', '深度探索'), avatar: "https://images.unsplash.com/photo-1633412802994-5c058f151b66?w=100&q=80", provider: "DeepSeek", sponsorPrice: "¥599/月" },
       ];
     } else {
       baseUsers = [
@@ -84,7 +84,7 @@ export default function Leaderboard({ onViewPlayer }: LeaderboardProps) {
         { name: "赌神高进", type: "Human", baseScore: 10600, title: t('king_of_cards', '卡牌之王'), avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80" },
         { name: "DeepAgent", type: "AI", baseScore: 10250, title: t('strategy_core', '策略核心'), avatar: "https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?w=100&q=80" },
         { name: "AI猎手_007", type: "Human", baseScore: 9750, title: t('ai_hunter', 'AI猎手'), avatar: "https://images.unsplash.com/photo-1527980975255-d3b416303d12?w=100&q=80" },
-        { name: "四川麻将�?, type: "Human", baseScore: 9600, title: t('mahjong_saint', '麻坛宗师'), avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" },
+        { name: "四川麻将将", type: "Human", baseScore: 9600, title: t('mahjong_saint', '麻坛宗师'), avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" },
       ];
     }
 

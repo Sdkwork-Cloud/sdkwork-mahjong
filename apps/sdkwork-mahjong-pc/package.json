@@ -4,9 +4,6 @@
   "version": "0.1.0",
   "type": "module",
   "packageManager": "pnpm@10.33.0",
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "vite build",
@@ -55,7 +52,7 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
-    "@types/node": "^22.14.0",
+    "@types/node": "catalog:",
     "autoprefixer": "^10.4.21",
     "tsx": "^4.21.0",
     "turbo": "^2.4.4",
