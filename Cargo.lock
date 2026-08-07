@@ -1702,6 +1702,7 @@ name = "sdkwork-api-mahjong-assembly"
 version = "0.1.0"
 dependencies = [
  "axum",
+ "sdkwork-database-sqlx",
  "sdkwork-mahjong-database-host",
  "sdkwork-mahjong-match-repository-sqlx",
  "sdkwork-mahjong-match-service",

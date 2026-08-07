@@ -37,5 +37,5 @@ axum = "0.8"
 dotenvy = "0.15"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-sqlx = { version = "0.9", default-features = false, features = ["runtime-tokio", "sqlite", "postgres", "derive"] }
+sqlx = { version = "0.9", default-features = false, features = ["runtime-tokio", "postgres", "derive"] }
 tokio = { version = "1.51", features = ["macros", "rt-multi-thread", "net", "sync", "time"] }
