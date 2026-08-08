@@ -37,10 +37,7 @@ async fn main() {
         .router
         .layer(sdkwork_web_bootstrap::application_cors_layer_from_env(
             &["SDKWORK_MAHJONG_ENVIRONMENT"],
-            &[
-                "SDKWORK_MAHJONG_CORS_ALLOWED_ORIGINS",
-                "SDKWORK_CORS_ALLOWED_ORIGINS",
-            ],
+            &["SDKWORK_CORS_ALLOWED_ORIGINS"],
         ));
     let listener = tokio::net::TcpListener::bind(&bind_address)
         .await
